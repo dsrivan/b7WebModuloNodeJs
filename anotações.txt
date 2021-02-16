@@ -4,5 +4,6 @@ após instalar o mongodb:
 nano /etc/mongod.conf
 
 sudo service mongod start --------------> para iniciar o mongodb
-sudo service mongod stop --------------> para parar o mongodb
+sudo service mongod stop ---------------> para parar o mongodb
 
+pm install dotenv ----------------------> para utilizar as variáveis de ambiente definidas

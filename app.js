@@ -11,7 +11,7 @@ router.get('/', (request, response) => {
     </h1>
 
     <h2>
-        <a href="/personalizada">
+        <a href="/personalizada" style="text-decoration: none; color: #5555b5;">
             Ir para a página personalizada
         </a>
     </h2>
@@ -27,7 +27,7 @@ router.get('/personalizada', (request, response) => {
     </h1>
 
     <h2>
-        <a href="/">
+        <a href="/" style="text-decoration: none; color: #5555b5;">
             Ir para a página Inicial
         </a>
     </h2>
