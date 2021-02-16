@@ -5,12 +5,33 @@ const router = express.Router();
 
 // rota página inicial
 router.get('/', (request, response) => {
-    response.send('<h1>Página principal.</h1>');
+    response.send(`
+    <h1>
+    Página Inicial
+    </h1>
+
+    <h2>
+        <a href="/personalizada">
+            Ir para a página personalizada
+        </a>
+    </h2>
+    `);
+    
 });
 
 // rota personalizada
 router.get('/personalizada', (request, response) => {
-    response.send('<h1>Página Personalizada</h1>');
+    response.send(`
+    <h1>
+    Página Personalizada
+    </h1>
+
+    <h2>
+        <a href="/">
+            Ir para a página Inicial
+        </a>
+    </h2>
+    `);
 });
 
 // configurações
