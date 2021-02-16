@@ -1,0 +1,8 @@
+após instalar o mongodb:
+
+<nome_editor> /etc/mongod.conf ---------> para visualizar as configurações:
+nano /etc/mongod.conf
+
+sudo service mongod start --------------> para iniciar o mongodb
+sudo service mongod stop --------------> para parar o mongodb
+
