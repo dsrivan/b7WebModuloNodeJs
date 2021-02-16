@@ -9,3 +9,10 @@ sudo service mongod stop ----------------> para parar o mongodb
 npm install dotenv ----------------------> para utilizar as variáveis de ambiente definidas
 
 npm install mongoose --save -------------> para utilizar o mongo DB
+
+
+query string ----------------------------> envia dados via get (url)
+ex: localhost:7777?val=1&val=2
+
+app.use(express.json()); ----------------> para acessar dados recebidos via post (basicamente terá o mesmo tratamento do método get)
+

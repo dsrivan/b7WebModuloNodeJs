@@ -5,6 +5,10 @@ const router = express.Router();
 
 // rota página inicial
 router.get('/', (request, response) => {
+
+    let nome = request.query.nome
+    let sobrenome = request.query.sobrenome
+
     response.send(`
     <div style="
         padding: 20px 50px;
@@ -20,10 +24,16 @@ router.get('/', (request, response) => {
             margin-bottom: 100px;
             color: #fff;
         ">
-        Página Inicial
+            Página Inicial
         </h1>
 
         <h2>
+            ${nome}
+            <br />
+            ${sobrenome}
+        </h2>
+
+        <h3>
             <a href="/sobre" style="
                 text-decoration: none;
                 background-color: #157347;
@@ -34,7 +44,7 @@ router.get('/', (request, response) => {
             ">
                 Ir para a página sobre
             </a>
-        </h2>
+        </h3>
     </div>
     `);
     
@@ -60,8 +70,8 @@ router.get('/sobre', (request, response) => {
             Página sobre
         </h1>
 
-        <h2>
-            <a href="/" style="
+        <h3>
+            <a href="/?nome=Ivan&sobrenome=da Silva Rosa" style="
                 text-decoration: none;
                 background-color: #0b5ed7;
                 padding: 20px 40px;
@@ -71,7 +81,7 @@ router.get('/sobre', (request, response) => {
             ">
                 Ir para a página Inicial
             </a>
-        </h2>
+        </h3>
     </div>
     `);
 });

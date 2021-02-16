@@ -8,4 +8,6 @@ const app = express();
 app.use('/', router);
 app.use('/personalizada', router);
 
+app.use(express.json());
+
 module.exports = app;
