@@ -16,3 +16,11 @@ ex: localhost:7777?val=1&val=2
 
 app.use(express.json()); ----------------> para acessar dados recebidos via post (basicamente terá o mesmo tratamento do método get)
 
+request.params.id -----------------------> parametros passados como valor na url ex: /posts/10
+
+ao transformar a resposta da requisição em json, não se deve mais usar o response.send();
+
+request.query ----------------------------> para recuperar parâmetros via GET
+request.body -----------------------------> para recuperar parâmetros via POST 
+request.params ---------------------------> para recuperar parâmetros via URL_PARAMS
+
