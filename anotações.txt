@@ -1,9 +1,11 @@
-após instalar o mongodb:
+após instalar o mongodb: 
 
-<nome_editor> /etc/mongod.conf ---------> para visualizar as configurações:
+<nome_editor> /etc/mongod.conf ----------> para visualizar as configurações:
 nano /etc/mongod.conf
 
-sudo service mongod start --------------> para iniciar o mongodb
-sudo service mongod stop ---------------> para parar o mongodb
+sudo service mongod start ---------------> para iniciar o mongodb
+sudo service mongod stop ----------------> para parar o mongodb
 
-pm install dotenv ----------------------> para utilizar as variáveis de ambiente definidas
+npm install dotenv ----------------------> para utilizar as variáveis de ambiente definidas
+
+npm install mongoose --save -------------> para utilizar o mongo DB
