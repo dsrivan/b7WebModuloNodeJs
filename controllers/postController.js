@@ -17,9 +17,9 @@ exports.addAction = async (request, response) => {
         // grava o post no banco
         await post.save();
     } catch(error) {
-        request.flash('error', 'Erro: ' + error.message);
-        return request.redirect('/post/add');
-        /* o return é para parar a execução do código */
+        // request.flash('error', 'Erro: ' + error.message);
+        request.flash('error', 'Ocorreu um erro! Tente novamente mais tarde.');
+        return response.redirect('/post/add');
     }
     // exibe mensagem flash
     request.flash('success', 'Post salvo com sucesso!');
