@@ -85,3 +85,6 @@ são mensagens de informação ao usuário ex: sucesso em gravar um novo post
 
 3 libs (abaixo, as 3 numa linha só)
 npm install cookie-parser express-session express-flash
+
+dependencia para automatizar slugs (links)
+npm install slug --save

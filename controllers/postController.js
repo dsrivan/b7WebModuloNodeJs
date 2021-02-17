@@ -27,3 +27,27 @@ exports.addAction = async (request, response) => {
     // redireciona para a home
     response.redirect('/');
 };
+
+exports.edit = async (request, response) => {
+    // pegar as informações do post
+    const post = await Post.findOne({ slug: request.params.slug });
+    // carregar o formulário com as informações
+    response.render('postEdit', { post });
+};
+
+exports.editAction = async (request, response) => {
+    // procurar o item enviado e atualizar
+    const post = await Post.findOneAndUpdate(
+        { slug: request.params.slug },
+        request.body,
+        {
+            new: true, // retorna o novo post atualizado
+            runValidators: true // 
+        }
+        );
+
+    // mostrar mensagem de sucesso
+    request.flash('success', 'Post atualizado com sucesso!');
+    // redirecionar para a home
+    response.redirect('/');
+};
