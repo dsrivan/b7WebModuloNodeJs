@@ -24,3 +24,28 @@ request.query ----------------------------> para recuperar parâmetros via GET
 request.body -----------------------------> para recuperar parâmetros via POST 
 request.params ---------------------------> para recuperar parâmetros via URL_PARAMS
 
+biblioteca template engine
+npm install mustache-express --save ------> template engine para express
+
+__dirname --------------------------------> pega o diretório
+
+plugin: mustache --------------------------> para aplicar o 'Syntax highlighting for mustache'
+
+{{#mostrar}} <conteudo> {{/mostrar}} ------> sintaxe para IF
+{{#mostrar}} <conteudo> {{/mostrar}} ------> sintaxe para fazer um loop (tipo for)
+
+OBS: ele reconhece se a variável é um boolean ou não e define se será um 'IF' ou um 'FOR'
+
+{{{var}}} ----------------------------------> usa-se 3 chaves para renderizar como HTML, uma string contendo TAG que foi passada via request
+
+para quando não existir valor na variável
+{{^<var>}}
+    <p>frase</p>
+{{/<var>}}
+
+{{! comentário }} ---------------------------> comentário
+
+{{> <nome_partials>}} -----------------------> para adicionar um conteúdo 'partials' na página
+
+template helpers -----------------------------> são informações padrões para caso não houver informação personalizada
+

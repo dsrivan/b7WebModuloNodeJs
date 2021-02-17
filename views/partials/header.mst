@@ -1,0 +1,49 @@
+<html style="box-sizing: border-box; font-family: Helvetica, arial; ">
+
+<head>
+    {{#pageTitle}}
+        <title>Site - {{pageTitle}}</title>
+    {{/pageTitle}}
+    {{^pageTitle}}
+        <title>Site - {{h.defaultPageTitle}}</title>
+    {{/pageTitle}}
+    <style>
+    ul li:hover {
+        background-color: #353535 !important;
+    }
+    </style>
+</head>
+
+<body style="font-size: 14px; font-weight: bold; margin: 0; padding: 0; box-sizing: border-box;">
+    <header>
+        <div style="
+            width: 100%;
+            box-sizing: border-box;
+            border: none;
+            background-color: #2d55b3;
+            text-align: center;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            ">
+                <ul style="
+                    display: flex;
+                    list-style: none;
+                    width: 50%;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 0;
+                    margin: 0;
+                    ">
+                    {{#h.menu}}
+                        <li style="
+                            cursor: pointer;
+                            flex: 1;
+                            transition: all .1s linear;
+                        ">
+                            <a style="box-sizing: border-box; width: 100%; display: inline-block; padding: 20px 0; color: #fff; text-transform: uppercase; text-decoration: none;" href="{{slug}}">{{name}}</a>
+                        </li>
+                    {{/h.menu}}
+                </ul>
+        </div>
+    </header>

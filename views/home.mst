@@ -1,0 +1,13 @@
+{{> header}}
+
+<section style="
+    padding: 50px 20px;
+    height: auto;
+    box-sizing: border-box;
+    ">
+    <p>
+        {{nome}} {{sobrenome}}
+    </p>
+</section>
+
+{{> footer}}
