@@ -5,8 +5,9 @@
     height: auto;
     box-sizing: border-box;
     ">
+    <h1>Error 404</h1>
     <p>
-        Home - {{userInfo.name}}
+        Página não encontrada
     </p>
 </section>
 

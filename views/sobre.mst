@@ -1,2 +1,13 @@
-<h1>SOBRE</h1>
-<p>Subtítulo qualquer da SOBRE</p>
+{{> header}}
+
+<section style="
+    padding: 50px 20px;
+    height: auto;
+    box-sizing: border-box;
+    ">
+    <p>
+        Sobre
+    </p>
+</section>
+
+{{> footer}}

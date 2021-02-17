@@ -8,9 +8,9 @@
         <title>Site - {{h.defaultPageTitle}}</title>
     {{/pageTitle}}
     <style>
-    ul li:hover {
-        background-color: #353535 !important;
-    }
+        ul li:hover {
+            background-color: #353535 !important;
+        }
     </style>
 </head>
 

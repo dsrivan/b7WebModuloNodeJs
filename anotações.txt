@@ -43,9 +43,25 @@ para quando não existir valor na variável
     <p>frase</p>
 {{/<var>}}
 
-{{! comentário }} ---------------------------> comentário
+{{! comentário }} ----------------------------> comentário
 
-{{> <nome_partials>}} -----------------------> para adicionar um conteúdo 'partials' na página
+{{> <nome_partials>}} ------------------------> para adicionar um conteúdo 'partials' na página
 
 template helpers -----------------------------> são informações padrões para caso não houver informação personalizada
 
+middleware -----------------------------------> algo que acontece entre algo, é um intermediário
+ex: processo de login
+requisição (tentativa de logar)
+
+validar os campos -----> é um middleware
+autorizar o user ------> é um middleware
+
+Controller -> resposta (sucesso ou falha)
+
+middleware global ----------------------------> funciona na aplicação toda
+middleware local -----------------------------> especifico a algum(ns) lugar(res)
+
+página 404
+consiste em ir passando rota por rota
+se chegar na última e não entrar, é porque a rota não existe
+sendo assim, caracteriza-se então a 'error 404'

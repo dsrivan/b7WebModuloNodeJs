@@ -6,7 +6,7 @@
     box-sizing: border-box;
     ">
     <p>
-        Home - {{userInfo.name}}
+        Contato
     </p>
 </section>
 
