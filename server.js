@@ -1,4 +1,3 @@
-const app = require('./app');
 const mongoose = require('mongoose');
 
 /* variáveis de ambiente */
@@ -18,6 +17,11 @@ mongoose.Promise = global.Promise;
 mongoose.connection.on('error', (error) => {
     console.error('Erro: ' + error.message);
 });
+
+/* carregando todos os models */
+require('./models/Post');
+
+const app = require('./app');
 
 /* utiliza a porta configurada nas variáveis de ambiente, ou usa o padrão '7777' */
 app.set('port', process.env.PORT || 7777);

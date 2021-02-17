@@ -24,6 +24,9 @@ app.use((request, response, next) => {
 // para usar em formato json (middleware global)
 app.use(express.json());
 
+//
+app.use(express.urlencoded({extended:true}));
+
 // rota inicial (middleware global)
 app.use('/', router);
 

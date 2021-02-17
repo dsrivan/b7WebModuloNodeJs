@@ -65,3 +65,18 @@ página 404
 consiste em ir passando rota por rota
 se chegar na última e não entrar, é porque a rota não existe
 sendo assim, caracteriza-se então a 'error 404'
+
+para enviar os dados pelas páginas (enviar form):
+ex:
+rota para acessar a página:
+router.get('/post/add', postController.add);
+
+rota para enviar os dados daquela página 
+router.post('/post/add', postController.addAction);
+
+Observação: por convenção, repete-se o nome da ação 'add', e concatena o prefixo 'Action'
+
+Sobre Promisse:
+async vai no inicio da função que precisará esperar a resposta
+await vai na frente do comando que preciso esperar a resposta
+
