@@ -11,6 +11,8 @@ exports.add = (request, response) => {
 };
 
 exports.addAction = async (request, response) => {
+    // transforma a string de tags em array de tags separados por vírgula
+    request.body.tags = request.body.tags.split(',').map(tag => tag.trim());
 
     // cria o tipo de post com base no model Post
     const post = new Post(request.body);

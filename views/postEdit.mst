@@ -38,12 +38,9 @@
             margin: 10px 0;
             width: 100%;
         ">
-            <label>Tags</label>
+            <label>Tags <small style="font-weight: 100; font-style: italic;">(Separar as tags por vírgula)</small></label>
             <div style="margin-top: 10px;">
-                <span style="background-color: #5f7fff; padding: 4px 15px; border-radius: 20px; margin-right: 5px; border: none; color: white;font-size: 12px; font-weight: lighter;">tag A</span>
-                <span style="background-color: #5f7fff; padding: 4px 15px; border-radius: 20px; margin-right: 5px; border: none; color: white;font-size: 12px; font-weight: lighter;">tag B</span>
-                <span style="background-color: #5f7fff; padding: 4px 15px; border-radius: 20px; margin-right: 5px; border: none; color: white;font-size: 12px; font-weight: lighter;">tag C</span>
-                <span style="background-color: #5f7fff; padding: 4px 15px; border-radius: 20px; margin-right: 5px; border: none; color: white;font-size: 12px; font-weight: lighter;">tag D</span>
+                <input type="text" name="tags" style="width: 100%;" />
             </div>
         </div>
         <div style="
