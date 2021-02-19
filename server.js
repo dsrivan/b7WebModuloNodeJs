@@ -7,7 +7,7 @@ require('dotenv').config({path:'variables.env'});
 mongoose.connect(process.env.DATABASE, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
-    useFindAndModify: true,
+    useFindAndModify: false,
 });
 
 /* para falar que pode utilizar conceitos do ES6+ */

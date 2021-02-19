@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 // // para utilizar o model Post
 const Post = mongoose.model('Post');
 
+const slug = require('slug');
+
 exports.add = (request, response) => {
     response.render('postAdd');
 };
@@ -36,15 +38,24 @@ exports.edit = async (request, response) => {
 };
 
 exports.editAction = async (request, response) => {
-    // procurar o item enviado e atualizar
-    const post = await Post.findOneAndUpdate(
-        { slug: request.params.slug },
-        request.body,
-        {
-            new: true, // retorna o novo post atualizado
-            runValidators: true // 
-        }
-        );
+    /* gerar o novo slug que era feito via middleware (pois o mid não é mais executado quando roda-se o 'findOneAndUpdate') */
+    request.body.slug = slug(request.body.title, { lower: true, });
+
+    try {        
+        // procurar o item enviado e atualizar
+        const post = await Post.findOneAndUpdate(
+            { slug: request.params.slug },
+            request.body,
+            {
+                new: true, // retorna o novo post atualizado
+                runValidators: true // 
+            }
+            ); 
+    } catch (error) {
+        // request.flash('error', 'Erro: ' + error.message);
+        request.flash('error', 'Ocorreu um erro! Tente novamente mais tarde.');
+        return response.redirect('/post/' + request.params.slug + '/edit');
+    } 
 
     // mostrar mensagem de sucesso
     request.flash('success', 'Post atualizado com sucesso!');
