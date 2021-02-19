@@ -1,31 +1,14 @@
 {{> header}}
 
-<section style="
-    padding: 50px 20px;
-    height: auto;
-    box-sizing: border-box;
-    ">
-    <h1>
-        Home - Posts
-    </h1>
-
-    <hr style="margin: 20px 0;" />
+<h1 style="margin-left: 20px;">Página Home</h1>
 
     {{#posts}}
-        <div style="
-            margin-bottom: 30px;
-            border: none;
-            border-radius: 5px;
-            padding: 20px;
-            background-color: #eaeaea;
-        ">
+        <div class="post">
             <h3><a href="/post/{{slug}}">{{title}}</a></h3>
             <p>{{body}}</p>
             <p>{{tags}}</p>
             <a style="margin-top: 20px; display: inline-block;;" href="/post/{{slug}}/edit">[ editar ]</a>
         </div>
     {{/posts}}
-
-</section>
 
 {{> footer}}

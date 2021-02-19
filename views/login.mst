@@ -39,14 +39,12 @@
             width: 100%;
         ">
             <input type="button" value=Entrar style="
-                padding: 10px 20px;
                 background-color: #1abd59;
                 border-radius: 5px;
-                border: none;
-                outline: none;
                 cursor: pointer;
                 color: white;
                 box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+                width: 100%;
             "/>
         <div>
     </form>

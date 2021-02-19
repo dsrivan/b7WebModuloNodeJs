@@ -1,80 +1,40 @@
-<html style="box-sizing: border-box; font-family: Helvetica, arial; ">
+<html>
 
 <head>
     {{#pageTitle}}
         <title>Site - {{pageTitle}}</title>
     {{/pageTitle}}
+
     {{^pageTitle}}
         <title>Site - {{h.defaultPageTitle}}</title>
     {{/pageTitle}}
-    <style>
-        ul li:hover {
-            background-color: #353535 !important;
-        }
-    </style>
+
+    <link rel="stylesheet" href="/assets/css/template.css">
 </head>
 
-<body style="position: relative; font-size: 14px; font-weight: bold; margin: 0; padding: 0; box-sizing: border-box;">
+<body>
+    <header>
+        <h1>Cabeçalho</h1>
+        <hr />
+        <ul>
+            {{#h.menu}}
+                <li>
+                    <a href="{{slug}}">{{name}}</a>
+                </li>
+            {{/h.menu}}
+        </ul>
+    </header>
 
     {{#flashes}}
-
-        {{#error}}
-            <div style="position: absolute;
-                background-color: pink;
-                color: #d75c72;
-                padding: 20px 50px;
-                top: 5vh;
-                right: 1vw;
-                border-radius: 5px;
-            ">
-                {{.}}
-            </div>
-        {{/error}}
-
         {{#success}}
-            <div style="position: absolute;
-                background-color: lightgreen;
-                color: green;
-                padding: 20px 50px;
-                top: 5vh;
-                right: 1vw;
-                border-radius: 5px;
-            ">
-                {{.}}
-            </div>
+            <div class="warning">{{.}}</div>
         {{/success}}
 
-    {{/flashes}}
+        {{#error}}
+            <div class="warning">{{.}}</div>
+        {{/error}}
 
-    <header>
-        <div style="
-            width: 100%;
-            box-sizing: border-box;
-            border: none;
-            background-color: #2d55b3;
-            text-align: center;
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        ">
-            <ul style="
-                display: flex;
-                list-style: none;
-                width: 50%;
-                justify-content: space-between;
-                align-items: center;
-                padding: 0;
-                margin: 0;
-                ">
-                {{#h.menu}}
-                    <li style="
-                        cursor: pointer;
-                        flex: 1;
-                        transition: all .1s linear;
-                    ">
-                        <a style="box-sizing: border-box; width: 100%; display: inline-block; padding: 20px 0; color: #fff; text-transform: uppercase; text-decoration: none;" href="{{slug}}">{{name}}</a>
-                    </li>
-                {{/h.menu}}
-            </ul>
-        </div>
-    </header>
+        {{#info}}
+            <div class="warning">{{.}}</div>
+        {{/info}}
+    {{/flashes}}

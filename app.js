@@ -29,6 +29,9 @@ app.use(express.json());
 //
 app.use(express.urlencoded({extended:true}));
 
+// colocar a pasta public como pasta estática
+app.use(express.static(__dirname + '/public'));
+
 // habilita o cookie
 app.use(cookieParser(process.env.SECRET));
 

@@ -88,3 +88,5 @@ npm install cookie-parser express-session express-flash
 
 dependencia para automatizar slugs (links)
 npm install slug --save
+
+pasta public no sistema ----------------------> arquivos que não fazem parte do código, que podem ser públicos (ex: ícones, imagens, css)
