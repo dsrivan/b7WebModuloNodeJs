@@ -21,7 +21,8 @@
         ">
             <h3><a href="/post/{{slug}}">{{title}}</a></h3>
             <p>{{body}}</p>
-            <a href="/post/{{slug}}/edit">[ editar ]</a>
+            <p>{{tags}}</p>
+            <a style="margin-top: 20px; display: inline-block;;" href="/post/{{slug}}/edit">[ editar ]</a>
         </div>
     {{/posts}}
 

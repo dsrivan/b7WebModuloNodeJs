@@ -67,3 +67,8 @@ exports.editAction = async (request, response) => {
     // redirecionar para a home
     response.redirect('/');
 };
+
+exports.view = async (request, response) => {
+    const post = await Post.findOne({ slug: request.params.slug});
+    response.render('view', { post });
+}
