@@ -40,7 +40,7 @@
         ">
             <label>Tags <small style="font-weight: 100; font-style: italic;">(Separar as tags por vírgula)</small></label>
             <div style="margin-top: 10px;">
-                <input type="text" name="tags" style="width: 100%;" />
+                <input type="text" name="tags" style="width: 100%;" value="{{post.tags}}"/>
             </div>
         </div>
         <div style="

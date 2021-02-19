@@ -40,6 +40,9 @@ exports.edit = async (request, response) => {
 };
 
 exports.editAction = async (request, response) => {
+    // transforma a string de tags em array de tags separados por vírgula
+    request.body.tags = request.body.tags.split(',').map(tag => tag.trim());
+
     /* gerar o novo slug que era feito via middleware (pois o mid não é mais executado quando roda-se o 'findOneAndUpdate') */
     request.body.slug = slug(request.body.title, { lower: true, });
 
