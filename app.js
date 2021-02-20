@@ -42,7 +42,7 @@ app.use(session({
     saveUninitialized: false // não salva a sessão se ela for iniciada sem nenhum dado
 }));
 
-// habilita o cookie
+// habilita o flash
 app.use(flash());
 
 // helpers (middleware global)
