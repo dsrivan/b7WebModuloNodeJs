@@ -90,3 +90,11 @@ dependencia para automatizar slugs (links)
 npm install slug --save
 
 pasta public no sistema ----------------------> arquivos que não fazem parte do código, que podem ser públicos (ex: ícones, imagens, css)
+
+-------------------- > upload de imagens <----
+npm install multer jimp uuid --save 
+multer --------------------------> lida com o upload (formulário enc_type="multipart")
+jimp ----------------------------> redimensionar as imagens do upload
+uuid ----------------------------> gera hash unico para nomes, para não dar conflito
+
+obs: será um middleware, poderá ser utilizado em qualquer lugar do sistema.
