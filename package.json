@@ -1,6 +1,13 @@
 {
+  "author": "Ivan da Silva Rosa",
+  "description": "Sistema blog, um desenvolvimento realizado no curso de NodeJS da B7Web",
   "name": "projetonodejs",
+  "keywords": [
+    "blog",
+    "B7Web"
+  ],
   "version": "1.0.0",
+  "license": "MIT",
   "scripts": {
     "start": "nodemon ./server.js"
   },
