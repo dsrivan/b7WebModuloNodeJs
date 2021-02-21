@@ -6,7 +6,7 @@
     box-sizing: border-box;
     ">
     <div style="
-        max-width: 500px;
+        max-width: 600px;
         border: 1px solid #d0cece;
         padding: 20px;
         box-sizing: border-box;
@@ -20,6 +20,19 @@
     ">
         <h1 style="margin: 10px 0 20px 0;">Detalhes do Post</h1>
 
+        <div style="
+            margin: 10px 0;
+            width: 100%;
+        ">
+            {{! se tiver foto, a exibe }}
+            {{#post.photo}}
+                <img style="max-width: 100%;" src="/media/{{post.photo}}" alt="imagem" />
+            {{/post.photo}}
+            {{! senão, exibe uma foto padrão }}
+            {{^post.photo}}
+                <img style="max-width: 100%;" src="/media/default.jpg" alt="imagem" />
+            {{/post.photo}}
+        </div>
         <div style="
             margin: 10px 0;
             width: 100%;

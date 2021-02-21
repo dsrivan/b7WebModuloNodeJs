@@ -24,12 +24,24 @@ const PostSchema = new mongoose.Schema({
 });
 
 // evento para slug (pré salvar)
-PostSchema.pre('save', function (next) {
+PostSchema.pre('save', async function (next) {
 
     // verifica se o campo foi modificado
     if (this.isModified('title')) {
         // cria o slug com base no titulo do post
         this.slug = slug(this.title, { lower: true });
+
+        // regex para ver se o nome de slug criado automaticamente já existe no banco
+        const slugRegex = new RegExp(`^(${this.slug})((-[0-9]{1,}$)?)$`, 'i');
+
+        // busca se existe, com base na regex
+        const postsWithSlug = await this.constructor.find({ slug: slugRegex });
+
+        // verifica se esse slug
+        if (postsWithSlug.length > 0) {
+            // pegará o tamanho do retorno e add + 1
+            this.slug = `${this.slug}-${postsWithSlug.length + 1}`;
+        }
     }
 
     next();

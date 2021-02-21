@@ -98,3 +98,5 @@ jimp ----------------------------> redimensionar as imagens do upload
 uuid ----------------------------> gera hash unico para nomes, para não dar conflito
 
 obs: será um middleware, poderá ser utilizado em qualquer lugar do sistema.
+
+RegExp --------------------------> new RegExp(``, 'i'); i = case INsensitive
