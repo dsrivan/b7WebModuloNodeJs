@@ -4,10 +4,20 @@
 
     {{#posts}}
         <div class="post">
+            {{! se tiver foto, a exibe }}
+            {{#photo}}
+                <img src="/media/{{photo}}" alt="imagem" />
+            {{/photo}}
+            {{! senão, exibe uma foto padrão }}
+            {{^photo}}
+                <img src="/media/default.jpg" alt="imagem" />
+            {{/photo}}
+
             <h3><a href="/post/{{slug}}">{{title}}</a></h3>
             <p>{{body}}</p>
-            <p>{{tags}}</p>
-            <a style="margin-top: 20px; display: inline-block;;" href="/post/{{slug}}/edit">[ editar ]</a>
+
+            <p style="color: #959595; min-height: 15px;"><small>{{tags}}</small></p>
+            <a style="margin-top: 20px; display: inline-block;;" href="/post/{{slug}}/edit">[ editar ]</a>            
         </div>
     {{/posts}}
 
