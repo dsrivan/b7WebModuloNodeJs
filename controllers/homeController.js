@@ -28,8 +28,7 @@ exports.index = async (request, response) => {
     // recuperar as tags de todos os posts
     const tags = await Post.getTagsList();
     responseJson.tags = tags;
-
-    console.log(tags);
+    //console.log(tags);
 
     // o find, sem parâmetro, retorna todos os registros
     const posts = await Post.find();
