@@ -47,4 +47,10 @@ PostSchema.pre('save', async function (next) {
     next();
 });
 
+PostSchema.statics.getTagsList = function () {
+    return this.aggregate([
+        { $unwind: '$tags' }
+    ]);
+}
+
 module.exports = mongoose.model('Post', PostSchema);

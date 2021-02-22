@@ -100,3 +100,5 @@ uuid ----------------------------> gera hash unico para nomes, para não dar con
 obs: será um middleware, poderá ser utilizado em qualquer lugar do sistema.
 
 RegExp --------------------------> new RegExp(``, 'i'); i = case INsensitive
+
+mongodb Aggregations ------------> lista de ações direto no banco (lista de tarefas)
