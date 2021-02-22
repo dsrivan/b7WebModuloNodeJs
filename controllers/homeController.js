@@ -22,11 +22,23 @@ exports.index = async (request, response) => {
         pageTitle: 'pageTitle',
         name: 'Ivan',
         posts: [],
-        tags: []
+        tags: [],
+        tag: ''
     };
+
+    // tag clicada na inicial (filtro)
+    responseJson.tag = request.query.t;
 
     // recuperar as tags de todos os posts
     const tags = await Post.getTagsList();
+
+    // looping para ver qual tag foi clicada e aplicar um css
+    for (let i in tags) {
+        if (tags[i]._id == responseJson.tag) {
+            tags[i].class = "selected";
+        }
+    }
+
     responseJson.tags = tags;
     //console.log(tags);
 

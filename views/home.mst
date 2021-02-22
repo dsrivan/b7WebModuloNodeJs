@@ -1,29 +1,28 @@
 {{> header}}
 
-
 <div class="tags">
     {{#tags}}
-        <div class="tag">{{_id}} ({{count}})</div>
+        <div class="tag {{class}}"><a href="/?t={{_id}}">{{_id}} ({{count}})</a></div>
     {{/tags}}
 </div>
 
-    {{#posts}}
-        <div class="post">
-            {{! se tiver foto, a exibe }}
-            {{#photo}}
-                <img src="/media/{{photo}}" alt="imagem" />
-            {{/photo}}
-            {{! senão, exibe uma foto padrão }}
-            {{^photo}}
-                <img src="/media/default.jpg" alt="imagem" />
-            {{/photo}}
+{{#posts}}
+    <div class="post">
+        {{! se tiver foto, a exibe }}
+        {{#photo}}
+            <img src="/media/{{photo}}" alt="imagem" />
+        {{/photo}}
+        {{! senão, exibe uma foto padrão }}
+        {{^photo}}
+            <img src="/media/default.jpg" alt="imagem" />
+        {{/photo}}
 
-            <h3><a href="/post/{{slug}}">{{title}}</a></h3>
-            <p>{{body}}</p>
+        <h3><a href="/post/{{slug}}">{{title}}</a></h3>
+        <p>{{body}}</p>
 
-            <p style="color: #959595; min-height: 15px;"><small>{{tags}}</small></p>
-            <a style="margin-top: 20px; display: inline-block;;" href="/post/{{slug}}/edit">[ editar ]</a>            
-        </div>
-    {{/posts}}
+        <p style="color: #959595; min-height: 15px;"><small>{{tags}}</small></p>
+        <a style="margin-top: 20px; display: inline-block;;" href="/post/{{slug}}/edit">[ editar ]</a>            
+    </div>
+{{/posts}}
 
 {{> footer}}
