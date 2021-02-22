@@ -12,6 +12,12 @@ const session = require('express-session');
 // sessão (mensagens flash)
 const flash = require('express-flash');
 
+// autenticação
+const passport = require('passport');
+
+// 
+const LocalStrategy = require('passport-local').Strategy;
+
 // Rotas
 const router = require('./routes');
 
@@ -53,6 +59,24 @@ app.use((request, response, next) => {
     response.locals.flashes = request.flash();
     next();
 });
+
+// inicializar o passport
+app.use(passport.initialize());
+
+// inicializar a sessão de login
+app.use(passport.session());
+
+// model de usuários
+const User = require('./models/User');
+
+// é o passport que usará o modelo de usuário
+passport.use(new LocalStrategy(User.authenticate()));
+
+//
+passport.serializeUser(User.serializeUser());
+
+//
+passport.deserializeUser(User.deserializeUser());
 
 // rota inicial (middleware global)
 app.use('/', router);
