@@ -21,6 +21,9 @@ router.get('/sobre', sobreController.index);
 
 router.get('/users/login', userController.login);
 
+router.get('/users/register', userController.register);
+router.post('/users/register', userController.registerAction);
+
 router.get('/contato', contatoController.index);
 
 router.get('/post/add', postController.add);
