@@ -51,7 +51,7 @@ PostSchema.statics.getTagsList = function () {
     return this.aggregate([
         { $unwind: '$tags' }, // separa posts por tags, ex: post com 3 tags, irá replicar 3x o post, 1 para cada tag
         { $group: { _id: '$tags', count: { $sum: 1 } } }, // agrupar em tags / fazer contagem de cada tag
-        { $sort: { count: -1 } }
+        { $sort: { count: -1, _id: 1 } } // ordena Decrescente pelo COUNT de tag e alfabeticamente
     ]);
 }
 

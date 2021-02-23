@@ -74,13 +74,23 @@ passport.deserializeUser(User.deserializeUser());
 */
 app.use((request, response, next) => {
     //variáveis globais
-    response.locals.h = helpers;
+    //response.locals.h = helpers; // assim passa efetivamente O helpers
+    response.locals.h = { ...helpers }; // assim passa somente os valores do helpers
 
     // flashes disponíveis globalmente
     response.locals.flashes = request.flash();
 
     //global, acessível em qualquer local do sistema (trata-se do usuário logado)
     response.locals.user = request.user;
+
+    // efetua o controle da visibilidade dos itens do menu
+    if (request.isAuthenticated()) {
+        //filtra o menu, exibindo somente o que tem TRUE em LOGGED(logado)
+        response.locals.h.menu = response.locals.h.menu.filter(i => (i.logged));
+    } else {
+        //filtra o menu, exibindo somente o que tem TRUE em GUEST(visitante)
+        response.locals.h.menu = response.locals.h.menu.filter(i => (i.guest));
+    }
 
     next();
 });

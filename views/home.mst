@@ -1,6 +1,6 @@
 {{> header}}
 
-<div class="tags" style="font-size: 12px;">
+<div class="tags" style="font-size: 12px; margin: 30px 0 20px 0;">
     {{#tags}}
         <div style="border: 1px solid; border-radius: 20px; margin-right: 5px;" class="tag {{class}}">
             <a style="text-decoration: none;" href="/?t={{_id}}">
@@ -25,20 +25,22 @@
         <p>{{body}}</p>
 
         <p style="color: #959595; min-height: 15px;"><small>{{tags}}</small></p>
-        <a style="margin-top: 20px;
-                display: inline-block;
-                position: absolute;
-                background-color: #5b5c5eeb;
-                color: #FFF;
-                z-index: 22;
-                top: -5px;
-                right: 20px;
-                padding: 5px 10px;
-                border-radius: 5px;
-                text-decoration: none;" 
-            href="/post/{{slug}}/edit">
-            [ editar ]
-        </a>            
+        {{#user}}
+            <a style="margin-top: 20px;
+                    display: inline-block;
+                    position: absolute;
+                    background-color: #5b5c5eeb;
+                    color: #FFF;
+                    z-index: 22;
+                    top: -5px;
+                    right: 20px;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    text-decoration: none;" 
+                href="/post/{{slug}}/edit">
+                [ editar ]
+            </a>
+        {{/user}}
     </div>
 {{/posts}}
 
