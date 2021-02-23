@@ -6,8 +6,29 @@ exports.login = (request, response) => {
     response.render('login');
 };
 
+exports.loginAction = (request, response) => {
+    //response.render('');
+
+    // cria uma função que recebe 3 args
+    const auth = User.authenticate();
+
+    // verifica a autenticação
+    auth(request.body.email, request.body.password, (error, result) => {
+        if (!result) {
+            // houve erro
+            request.flash('error', 'Seu e-mail e/ou senha estão incorretos.');
+            response.redirect('/users/login');
+            return;
+        }
+
+        // sucesso na autenticação
+        request.flash('success', 'Foi logado!!!!');
+        response.redirect('/');
+    });
+}
+
 exports.register = (request, response) => {
-  response.render('register');
+    response.render('register');
 };
 
 exports.registerAction = (request, response) => {
@@ -20,12 +41,13 @@ exports.registerAction = (request, response) => {
     User.register(newUser, request.body.password, (error) => {
         if (error) {
             // algum problema na gravação
-            console.log('erro ao registrar', error);
-            response.redirect('/');
+            request.flash('error', 'Ocorreu um erro, tente novamente mais tarde.');
+            response.redirect('/users/register');
         }
 
         // sucesso na gravação
-        response.redirect('/');
+        request.flash('success', 'Registro efetuado com sucesso. Faça login.');
+        response.redirect('/users/login');
 
     });
 };

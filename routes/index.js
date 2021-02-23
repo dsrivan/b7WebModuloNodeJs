@@ -20,6 +20,7 @@ router.get('/',
 router.get('/sobre', sobreController.index);
 
 router.get('/users/login', userController.login);
+router.post('/users/login', userController.loginAction);
 
 router.get('/users/register', userController.register);
 router.post('/users/register', userController.registerAction);
