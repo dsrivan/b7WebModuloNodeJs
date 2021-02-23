@@ -21,6 +21,11 @@ exports.loginAction = (request, response) => {
             return;
         }
 
+        // para fazer o login de fato
+        request.login(result, () => {
+
+        });
+
         // sucesso na autenticação
         request.flash('success', 'Foi logado!!!!');
         response.redirect('/');
@@ -50,4 +55,9 @@ exports.registerAction = (request, response) => {
         response.redirect('/users/login');
 
     });
+};
+
+exports.logout = (request, response) => {
+    request.logout();
+    response.redirect('/');
 };

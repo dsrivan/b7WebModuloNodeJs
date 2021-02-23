@@ -27,14 +27,14 @@
             width: 100%;
         ">
             <label>Usuário</label>
-            <input type="text" name="email" style="width: 100%;"/>
+            <input type="text" name="email" value="iivan.si@msn.com" style="width: 100%;"/>
         </div>
         <div style="
             margin: 10px 0;
             width: 100%;
         ">
             <label>Senha</label>
-            <input type="password" name="password" style="width: 100%;"/>
+            <input type="password" name="password" value="123" style="width: 100%;"/>
             </div>
         <div style="
             margin: 20px 0 10px;

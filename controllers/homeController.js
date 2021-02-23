@@ -26,6 +26,9 @@ exports.index = async (request, response) => {
         tag: ''
     };
 
+    // dados do usuário logado
+    //console.log(request.user);
+
     // tag clicada na inicial (filtro)
     responseJson.tag = request.query.t;
 
@@ -36,9 +39,9 @@ exports.index = async (request, response) => {
     const tagsPromise = Post.getTagsList();
     // o find, sem parâmetro, retorna todos os registros
     const postsPromise = Post.find(postFilter);
-    
+
     // irá executar as duas consultas ao mesmo tempo, e no retorno da primeira, o código continua para baixo
-    const [tags, posts] = await Promise.all([ tagsPromise, postsPromise ]);
+    const [tags, posts] = await Promise.all([tagsPromise, postsPromise]);
     // acima, utilizando o conceito de descontrução
 
     // looping para ver qual tag foi clicada e aplicar um css

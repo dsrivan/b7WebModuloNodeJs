@@ -44,11 +44,26 @@ li {
 }
 
 .warning {
-  border: 2px solid #5555ff;
-  background-color: #0000ff;
-  color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
+}
+
+.warning.success {
+  border: 2px solid #198754;
+  background-color: #198754;
+  color: #fff;
+}
+
+.warning.error {
+  border: 2px solid #dc3545;
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.warning.info {
+  border: 2px solid #0dcaf0;
+  background-color: #0dcaf0;
+  color: #000;
 }
 
 .post {
@@ -108,8 +123,7 @@ input[type="submit"]:hover {
   padding: 10px;
   display: inherit;
 }
-
-.tag:hover a,
+. .tag:hover a,
 .tag.selected a {
   color: #fff;
 }

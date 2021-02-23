@@ -21,18 +21,35 @@
                 </li>
             {{/h.menu}}
         </ul>
-    </header>
+    </header>    
+
+    <div style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #ccc;
+            font-size: 14px;
+            padding: 10px;">
+        <span>
+            {{#user}}
+                Olá, {{user.name}}. <small><a style="color: gray;" href="/users/logout">Sair</a></small>
+            {{/user}}
+            {{^user}}
+                <a href="/users/login">Faça login</a>
+            {{/user}}
+        </span>
+    </div>    
 
     {{#flashes}}
         {{#success}}
-            <div class="warning">{{.}}</div>
+            <div class="warning success">{{.}}</div>
         {{/success}}
 
         {{#error}}
-            <div class="warning">{{.}}</div>
+            <div class="warning error">{{.}}</div>
         {{/error}}
 
         {{#info}}
-            <div class="warning">{{.}}</div>
+            <div class="warning info">{{.}}</div>
         {{/info}}
     {{/flashes}}

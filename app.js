@@ -51,15 +51,6 @@ app.use(session({
 // habilita o flash
 app.use(flash());
 
-// helpers (middleware global)
-app.use((request, response, next) => {
-    //variáveis globais
-    response.locals.h = helpers;
-    // flashes disponíveis globalmente
-    response.locals.flashes = request.flash();
-    next();
-});
-
 // inicializar o passport
 app.use(passport.initialize());
 
@@ -77,6 +68,22 @@ passport.serializeUser(User.serializeUser());
 
 //
 passport.deserializeUser(User.deserializeUser());
+
+/*  helpers (middleware global) 
+    disponibiliza para todo o sistema, para não ter que ficar repetindo 
+*/
+app.use((request, response, next) => {
+    //variáveis globais
+    response.locals.h = helpers;
+
+    // flashes disponíveis globalmente
+    response.locals.flashes = request.flash();
+
+    //global, acessível em qualquer local do sistema (trata-se do usuário logado)
+    response.locals.user = request.user;
+
+    next();
+});
 
 // rota inicial (middleware global)
 app.use('/', router);
