@@ -7,6 +7,9 @@ const slug = require('slug');
 // configuração para utilizar a forma de comunicação mais atualizada
 mongoose.Promise = global.Promise;
 
+// criação de ID
+const ObjectId = mongoose.Schema.Types.ObjectId;
+
 // estrutura de post
 const PostSchema = new mongoose.Schema({
     photo: String,
@@ -20,7 +23,8 @@ const PostSchema = new mongoose.Schema({
         type: String,
         trim: true
     },
-    tags: [String]
+    tags: [String],
+    author: ObjectId,
 });
 
 // evento para slug (pré salvar)
@@ -52,6 +56,28 @@ PostSchema.statics.getTagsList = function () {
         { $unwind: '$tags' }, // separa posts por tags, ex: post com 3 tags, irá replicar 3x o post, 1 para cada tag
         { $group: { _id: '$tags', count: { $sum: 1 } } }, // agrupar em tags / fazer contagem de cada tag
         { $sort: { count: -1, _id: 1 } } // ordena Decrescente pelo COUNT de tag e alfabeticamente
+    ]);
+}
+
+PostSchema.statics.findPosts = function (filters = {}) {
+    return this.aggregate([
+        { $match: filters },
+        {
+            /* 
+                pesquisa em outra parte do BD, informações para juntar ao BD usado aqui
+                o $$ é para referenciar uma variável criada dentro do agregate, para o lookup
+                se usar apenas 1 $, o código entende como sendo um campo da consulta
+            */
+
+            lookup: {
+                from: 'users',
+                let: { 'author': '$author' },
+                pipeline: [
+                    { $match: { $expr: { $eq: ['$$author', '$_id'] } } }
+                ],
+                as: 'author'
+            }
+        }
     ]);
 }
 

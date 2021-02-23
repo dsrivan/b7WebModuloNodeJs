@@ -14,13 +14,16 @@ exports.addAction = async (request, response) => {
     // transforma a string de tags em array de tags separados por vírgula
     request.body.tags = request.body.tags.split(',').map(tag => tag.trim());
 
+    // pegar o id com base na autenticação do usuário logado
+    request.body.author = request.user._id;
+
     // cria o tipo de post com base no model Post
     const post = new Post(request.body);
 
     try {
         // grava o post no banco
         await post.save();
-    } catch(error) {
+    } catch (error) {
         // request.flash('error', 'Erro: ' + error.message);
         request.flash('error', 'Ocorreu um erro! Tente novamente mais tarde.');
         return response.redirect('/post/add');
@@ -46,7 +49,7 @@ exports.editAction = async (request, response) => {
     /* gerar o novo slug que era feito via middleware (pois o mid não é mais executado quando roda-se o 'findOneAndUpdate') */
     request.body.slug = slug(request.body.title, { lower: true, });
 
-    try {        
+    try {
         // procurar o item enviado e atualizar
         const post = await Post.findOneAndUpdate(
             { slug: request.params.slug },
@@ -55,12 +58,12 @@ exports.editAction = async (request, response) => {
                 new: true, // retorna o novo post atualizado
                 runValidators: true // 
             }
-            ); 
+        );
     } catch (error) {
         // request.flash('error', 'Erro: ' + error.message);
         request.flash('error', 'Ocorreu um erro! Tente novamente mais tarde.');
         return response.redirect('/post/' + request.params.slug + '/edit');
-    } 
+    }
 
     // mostrar mensagem de sucesso
     request.flash('success', 'Post atualizado com sucesso!');
@@ -69,6 +72,6 @@ exports.editAction = async (request, response) => {
 };
 
 exports.view = async (request, response) => {
-    const post = await Post.findOne({ slug: request.params.slug});
+    const post = await Post.findOne({ slug: request.params.slug });
     response.render('view', { post });
 }

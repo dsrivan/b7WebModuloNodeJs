@@ -18,7 +18,7 @@
         {{/photo}}
         {{! senão, exibe uma foto padrão }}
         {{^photo}}
-            <img src="/media/default.jpg" alt="imagem" />
+            <img src="/media/defaultImage___.jpg" alt="imagem" />
         {{/photo}}
 
         <h3><a href="/post/{{slug}}">{{title}}</a></h3>
@@ -32,7 +32,7 @@
                     background-color: #5b5c5eeb;
                     color: #FFF;
                     z-index: 22;
-                    top: -5px;
+                    top: 0;
                     right: 20px;
                     padding: 5px 10px;
                     border-radius: 5px;
@@ -41,6 +41,12 @@
                 [ editar ]
             </a>
         {{/user}}
+    </div>
+{{/posts}}
+
+{{^posts}}
+    <div style="padding: 20px; text-align: center; margin-bottom: 50px;">
+        Nenhm post a ser exibido!
     </div>
 {{/posts}}
 
