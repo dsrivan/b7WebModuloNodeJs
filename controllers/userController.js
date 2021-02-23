@@ -61,3 +61,33 @@ exports.logout = (request, response) => {
     request.logout();
     response.redirect('/');
 };
+
+exports.profile = (request, response) => {
+
+    response.render('profile', {});
+}
+
+exports.profileAction = async (request, response) => {
+    try {
+        const user = await User.findOneAndUpdate(
+            {
+                _id: request.user._id // buscará pelo ID do usuário
+            },
+            {
+                name: request.body.name, // nome a ser atualizado
+                email: request.body.email // email a ser atualizado
+            },
+            {
+                new: true, // para retornar as informações atualizadas
+                runValidators: true // executar validações que por ventura tiver sido feito/incluído
+            },
+        );
+    }
+    catch (error) {
+        request.flash('error', 'Ocorreu algum erro: ' + error.message);
+        response.redirect('/profile');
+    }
+
+    request.flash('success', 'Dados atualizados com sucesso!');
+    response.redirect('/profile');
+}
