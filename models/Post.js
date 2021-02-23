@@ -68,14 +68,23 @@ PostSchema.statics.findPosts = function (filters = {}) {
                 o $$ é para referenciar uma variável criada dentro do agregate, para o lookup
                 se usar apenas 1 $, o código entende como sendo um campo da consulta
             */
-
-            lookup: {
+            $lookup: { // sempre retorna um array
                 from: 'users',
                 let: { 'author': '$author' },
                 pipeline: [
-                    { $match: { $expr: { $eq: ['$$author', '$_id'] } } }
+                    // dar match entre as caracteristicas dos campos informados
+                    { $match: { $expr: { $eq: ['$$author', '$_id'] } } },
+                    { $limit: 1 } // para garantir que traga apenas 1 resultado
                 ],
                 as: 'author'
+            }
+        },
+        {
+            /* logo depois do lookup, roda-se esse código para pegar o primeiro item do array */
+            $addFields: {
+                'author': {
+                    $arrayElemAt: ['$author', 0] // função nativa para pegar o valor da posição informada
+                }
             }
         }
     ]);
