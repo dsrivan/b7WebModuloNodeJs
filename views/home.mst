@@ -23,7 +23,7 @@
 
         <h3><a href="/post/{{slug}}">{{title}}</a></h3>
         <small><b>Autor:</b> {{author.name}}</small>
-        <p>{{body}}</p>
+        <p style="text-align: justify;">{{body}}</p>
 
         <p style="color: #959595; min-height: 15px;"><small>{{tags}}</small></p>
         {{#user}}

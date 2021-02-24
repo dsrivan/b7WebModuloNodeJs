@@ -91,3 +91,34 @@ exports.profileAction = async (request, response) => {
     request.flash('success', 'Dados atualizados com sucesso!');
     response.redirect('/profile');
 }
+
+exports.forget = (request, response) => {
+    // abre o formulário para digitar o email (forgetAction)
+    response.render('forget');
+}
+
+exports.forgetAction = async (request, response) => {
+    /* 
+        ação executada logo após o forget
+        
+        verifica se o email existe
+        SE existir gera um token (com data de expiração) e salvar no banco
+        gera link com o token para trocar a senha
+        enviar o link via email para o usuário
+        usuário acessa o link válido para trocar a senha
+    */
+    if (request.body.email === "") {
+        request.flash('info', 'Preencha corretamente o campo "E-mail".');
+        response.redirect('/users/forget');
+        return;
+    }
+
+    const user = await User.findOne({ 'email': request.body.email });
+    if (!user) {
+        /* não foi encontrado usuário com esse email */
+        request.flash('error', 'Houve um problema, tente novamente mais tarde.');
+        response.redirect('/users/forget');
+        return;
+    }
+
+}

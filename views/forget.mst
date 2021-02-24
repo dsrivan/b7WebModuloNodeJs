@@ -1,0 +1,17 @@
+{{> header}}
+
+<section style="padding: 50px 20px; height: auto; box-sizing: border-box; "> 
+    <form method="POST" style="max-width: 500px; border: 1px solid #d0cece; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 5px; margin: auto; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); ">
+        <h1 style="margin: 10px 0 20px 0;">Esqueci minha senha</h1>
+
+        <div style="margin: 10px 0; width: 100%; ">
+            <label>Email</label>
+            <input type="text" name="email" value="" style="width: 100%;"/>
+        </div>
+        <div style="margin: 20px 0 10px; width: 100%;">
+            <input type="submit" value="Redefinir Senha" style="background-color: #1abd59; border-radius: 5px; cursor: pointer; color: white; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); width: 100%; "/>
+        <div>
+    </form>
+</section>
+
+{{> footer}}
