@@ -25,5 +25,5 @@ exports.changePassword = (request, response) => {
 
         request.flash('success', 'Senha alterada com sucesso!');
         response.redirect('/');
-    })
+    });
 }

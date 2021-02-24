@@ -108,7 +108,10 @@ exports.forgetAction = async (request, response) => {
     }
 
     /* verifica se o email existe */
-    const user = await User.findOne({ 'email': request.body.email });
+    const user = await User.findOne({
+        'email': request.body.email
+    }).exec();
+
     if (!user) {
         /* não foi encontrado usuário com esse email */
         request.flash('error', 'Houve um problema, tente novamente mais tarde.');
@@ -124,14 +127,12 @@ exports.forgetAction = async (request, response) => {
     const resetLink = `http://${request.headers.host}/users/reset/${user.resetPasswordToken}`;
 
     /* enviar o link via email para o usuário */
-
     // ############### temporário
-    request.flash('success', 'As instruções foram enviadas para o seu email.' + resetLink);
+    //request.flash('success', 'As instruções foram enviadas para o seu email.');
+    request.flash('success', resetLink);
     // ############### temporário
 
     response.redirect('/users/login');
-
-    /* usuário acessa o link válido para trocar a senha */
 }
 
 exports.forgetToken = async (request, response) => {
@@ -149,5 +150,42 @@ exports.forgetToken = async (request, response) => {
     }
 
     /* existe o token válido */
-    response.render('forgetPassword', {});
+    response.render('forgetPassword');
+}
+
+exports.forgetTokenAction = async (request, response) => {
+    /* verifica se foi digitado algum email */
+    if (request.body.password === "" || request.body['password-confirm'] === "") {
+        request.flash('info', 'Preencha corretamente os campos "Nova Senha" e "Confirmar Nova Senha".');
+        response.redirect('back');
+        return;
+    }
+
+    /* verifica se o token existe e é válido */
+    const user = await User.findOne({
+        'resetPasswordToken': request.params.token,
+        'resetPasswordTokenExpires': { $gt: Date.now() } // gt: maior que
+    }).exec();
+
+    /* se não foi encontrado um token válido */
+    if (!user) {
+        request.flash('error', 'Token expirado');
+        response.redirect('/users/forget');
+        return;
+    }
+
+    // confirmar que as senhas digitadas são iguais
+    if (request.body.password != request.body['password-confirm']) {
+        request.flash('error', 'As senhas digitadas são diferentes.');
+        response.redirect('back'); // volta para a tela anterior
+        return;
+    }
+
+    // procura usuário e troca a senha do usuário
+    user.setPassword(request.body.password, async () => {
+        await user.save(); // salvar no banco a nova senha
+
+        request.flash('success', 'Senha alterada com sucesso!');
+        response.redirect('/');
+    });
 }

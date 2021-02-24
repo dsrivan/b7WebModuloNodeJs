@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 /* variáveis de ambiente */
-require('dotenv').config({path:'variables.env'});
+require('dotenv').config({ path: 'variables.env' });
 
 /* conectar ao mongoose, que no caso foi configurada nas variáveis de ambiente */
 mongoose.connect(process.env.DATABASE, {
@@ -27,5 +27,8 @@ const app = require('./app');
 app.set('port', process.env.PORT || 7777);
 
 const server = app.listen(app.get('port'), () => {
-    console.log('Servidor rodando na porta: ' + server.address().port);
+    console.clear();
+    //console.log('Servidor rodando na porta: ' + s);
+    console.log('##### OK (port: ' + server.address().port + ') #####');
+    console.log();
 });

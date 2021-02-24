@@ -6,7 +6,7 @@
 
         <div style="margin: 10px 0; width: 100%; ">
             <label>Email</label>
-            <input type="text" name="email" value="" style="width: 100%;"/>
+            <input type="text" name="email" value="iivan.si@msn.com" style="width: 100%;"/>
         </div>
         <div style="margin: 20px 0 10px; width: 100%;">
             <input type="submit" value="Redefinir Senha" style="background-color: #1abd59; border-radius: 5px; cursor: pointer; color: white; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); width: 100%; "/>
