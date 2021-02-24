@@ -36,6 +36,11 @@ router.post('/profile',
     userController.profileAction
 );
 
+router.post('/profile/password',
+    authMiddleware.isLogged,
+    authMiddleware.changePassword,
+);
+
 router.get('/contato', contatoController.index);
 
 router.get('/post/add',

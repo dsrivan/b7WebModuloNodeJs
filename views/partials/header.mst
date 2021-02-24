@@ -32,7 +32,7 @@
             padding: 10px;">
         <span>
             {{#user}}
-                Olá, <a href="/profile">{{user.name}}</a>. <small><a style="color: gray;" href="/users/logout">Sair</a></small>
+                Olá, <a style="text-decoration: underline;" href="/profile">{{user.name}}</a>. <small><a style="color: gray;" href="/users/logout">Sair</a></small>
             {{/user}}
             {{^user}}
                 <a href="/users/login">Faça login</a>
