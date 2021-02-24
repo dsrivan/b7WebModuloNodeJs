@@ -1,6 +1,6 @@
 // utilizar o model de User
-const passport = require('passport');
 const User = require('../models/User');
+const crypto = require('crypto'); // para gerar um dado específico (no caso, um token)
 
 exports.login = (request, response) => {
     response.render('login');
@@ -98,21 +98,16 @@ exports.forget = (request, response) => {
 }
 
 exports.forgetAction = async (request, response) => {
-    /* 
-        ação executada logo após o forget
-        
-        verifica se o email existe
-        SE existir gera um token (com data de expiração) e salvar no banco
-        gera link com o token para trocar a senha
-        enviar o link via email para o usuário
-        usuário acessa o link válido para trocar a senha
-    */
+    /* ação executada logo após o forget */
+
+    /* verifica se foi digitado algum email */
     if (request.body.email === "") {
         request.flash('info', 'Preencha corretamente o campo "E-mail".');
         response.redirect('/users/forget');
         return;
     }
 
+    /* verifica se o email existe */
     const user = await User.findOne({ 'email': request.body.email });
     if (!user) {
         /* não foi encontrado usuário com esse email */
@@ -121,4 +116,38 @@ exports.forgetAction = async (request, response) => {
         return;
     }
 
+    /* gera link com o token para trocar a senha */
+    user.resetPasswordToken = crypto.randomBytes(20).toString('hex'); // gera um token randomicamente
+    user.resetPasswordTokenExpires = Date.now() + 3600000; // 3600000 = 1 hora
+    await user.save();
+
+    const resetLink = `http://${request.headers.host}/users/reset/${user.resetPasswordToken}`;
+
+    /* enviar o link via email para o usuário */
+
+    // ############### temporário
+    request.flash('success', 'As instruções foram enviadas para o seu email.' + resetLink);
+    // ############### temporário
+
+    response.redirect('/users/login');
+
+    /* usuário acessa o link válido para trocar a senha */
+}
+
+exports.forgetToken = async (request, response) => {
+    /* verifica se o token existe e é válido */
+    const user = await User.findOne({
+        'resetPasswordToken': request.params.token,
+        'resetPasswordTokenExpires': { $gt: Date.now() } // gt: maior que
+    }).exec();
+
+    /* se não foi encontrado um token válido */
+    if (!user) {
+        request.flash('error', 'Token expirado');
+        response.redirect('/users/forget');
+        return;
+    }
+
+    /* existe o token válido */
+    response.render('forgetPassword', {});
 }

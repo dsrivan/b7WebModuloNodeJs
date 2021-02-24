@@ -10,7 +10,9 @@ mongoose.Promise = global.Promise;
 // estrutura de usuário
 const userSchema = new mongoose.Schema({
     name: String,
-    email: String
+    email: String,
+    resetPasswordToken: String,
+    resetPasswordTokenExpires: Date
 });
 
 // add plugin passport dentro do userSchema
