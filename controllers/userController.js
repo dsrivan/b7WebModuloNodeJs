@@ -1,6 +1,11 @@
 // utilizar o model de User
 const User = require('../models/User');
-const crypto = require('crypto'); // para gerar um dado específico (no caso, um token)
+
+// para gerar um dado específico (no caso, um token)
+const crypto = require('crypto');
+
+// serviço de envio de email
+const mailHandler = require('../handlers/mailHandler');
 
 exports.login = (request, response) => {
     response.render('login');
@@ -126,12 +131,21 @@ exports.forgetAction = async (request, response) => {
 
     const resetLink = `http://${request.headers.host}/users/reset/${user.resetPasswordToken}`;
 
-    /* enviar o link via email para o usuário */
-    // ############### temporário
-    //request.flash('success', 'As instruções foram enviadas para o seu email.');
-    request.flash('success', resetLink);
-    // ############### temporário
+    const html = `Testando email com link: <a href="${resetLink}">Resetar sua senha</a>`;
+    const text = `Testando email com link: ${resetLink}`;
 
+    const to = `${user.name} <${user.email}>`;
+
+    /* enviar o link via email para o usuário */
+    mailHandler.send({
+        to: to,
+        subject: 'Resetar sua senha',
+        html: html,
+        text: text,
+    });
+
+    /* mensagem ao usuário e redirect */
+    request.flash('success', 'As instruções foram enviadas para o seu email.');
     response.redirect('/users/login');
 }
 

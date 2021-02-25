@@ -107,3 +107,7 @@ npm install passport passport-local passport-local-mongoose --save
 passport ------------------------> faz a autenticação, pode autenticar com facebook, twitter, etc
 passport-local ------------------> login local (uzando o bd local)
 passport-local-mongoose ---------> integração entre o passport e o mongoose
+
+Envio de EMAIL
+Servidor SMTP -------------------> sugestão: mailtrap.io
+npm install nodemailer --save ---> lib de envio de email
