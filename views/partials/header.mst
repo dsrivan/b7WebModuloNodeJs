@@ -9,47 +9,53 @@
         <title>Site - {{h.defaultPageTitle}}</title>
     {{/pageTitle}}
 
-    <link rel="stylesheet" href="/assets/css/template.css">
+    {{! <link rel="stylesheet" href="/assets/css/template.css"> }}
 </head>
 
-<body>
-    <header>
-        <ul>
-            {{#h.menu}}
-                <li>
-                    <a href="{{slug}}">{{name}}</a>
-                </li>
-            {{/h.menu}}
-        </ul>
-    </header>    
+<body style="font-family: arial; margin: 0; padding: 0; box-sizing: border-box;">
+    <header style="background-color: #343a40; box-sizing: border-box; position: relative;">
+        <div class="container" style="width: 100%; max-width: 1000px; margin: auto; padding: 10px;">
+            <div style="display: flex; color: #fff; box-sizing: border-box;">
+                <div style="width: 200px; align-items: center; display: flex; font-size: 24px;">
+                    Blog dsrIvan
+                </div>
+                <div style="flex: 1;">
+                    <nav style="width: 100%; display: flex; justify-content: center;">
+                        <ul style="display: flex; margin: 0;">
+                            {{#h.menu}}
+                                <li style="display: inline-block; padding: 10px; cursor: pointer;">
+                                    <a href="{{slug}}" style="color: #fff; text-decoration: none;">{{name}}</a>
+                                </li>
+                            {{/h.menu}}
+                        </ul>
+                    </nav>
+                </div>
+                <div style="width: 150px; display: flex; justify-content: center; align-items: center;">
+                    {{#user}}
+                        <div>
+                            Olá, <a style="text-decoration: underline;" href="/profile">{{user.name}}</a>. <small><a style="color: gray;" href="/users/logout">Sair</a></small>
+                        </div>
+                    {{/user}}
+                    {{^user}}
+                        <div>
+                            <a style="background-color: #ffc107; padding: 10px; border-radius: 4px; text-decoration: none; color: #000;" href="/users/login">Faça login</a>
+                        </div>
+                    {{/user}}
+                </div>
+            </div>
+        </div>
 
-    <div style="
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 1px solid #ccc;
-            font-size: 14px;
-            padding: 10px;">
-        <span>
-            {{#user}}
-                Olá, <a style="text-decoration: underline;" href="/profile">{{user.name}}</a>. <small><a style="color: gray;" href="/users/logout">Sair</a></small>
-            {{/user}}
-            {{^user}}
-                <a href="/users/login">Faça login</a>
-            {{/user}}
-        </span>
-    </div>    
+        {{#flashes}}
+            {{#success}}
+                <div class="warning success" style="background-color: #198754; color: #fff; padding: 10px 20px; position: absolute; right: 10px; top: 70px; border-radius: 4px;">{{.}}</div>
+            {{/success}}
 
-    {{#flashes}}
-        {{#success}}
-            <div class="warning success">{{.}}</div>
-        {{/success}}
+            {{#error}}
+                <div class="warning error" style="background-color: #bb2d3b; color: #fff; padding: 10px 20px; position: absolute; right: 10px; top: 70px; border-radius: 4px;">{{.}}</div>
+            {{/error}}
 
-        {{#error}}
-            <div class="warning error">{{.}}</div>
-        {{/error}}
-
-        {{#info}}
-            <div class="warning info">{{.}}</div>
-        {{/info}}
-    {{/flashes}}
+            {{#info}}
+                <div class="warning info" style="background-color: #0dcaf0; color: #000; padding: 10px 20px; position: absolute; right: 10px; top: 70px; border-radius: 4px;">{{.}}</div>
+            {{/info}}
+        {{/flashes}}
+    </header>
