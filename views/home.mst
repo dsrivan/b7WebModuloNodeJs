@@ -37,9 +37,8 @@
 </div>
 
 <div class="container" style="  width: 100%; 
-                                max-width: 1000px; 
-                                margin: auto; 
-                                margin: 70px auto;">
+                                max-width: 1000px;
+                                margin: 70px auto 50px;">
     <div style="display: flex; justify-content: center;">
         <div style="padding: 5px 10px;"><a style="border: 1px solid #47c9e5; padding: 6px 15px; border-radius: 20px; color: #FFF; cursor: pointer; background-color: #47c9e5; font-weight: bold;">Todos</a></div>
         <div style="padding: 5px 10px;"><a style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; color: #828282; cursor: pointer;">Tag</a></div>
@@ -50,6 +49,81 @@
         <div style="padding: 5px 10px;"><a style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; color: #828282; cursor: pointer;">Blob</a></div>
         <div style="padding: 5px 10px;"><a style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; color: #828282; cursor: pointer;">Título</a></div>
     </div>
+</div>
+
+<div class="container" style="  width: 100%; 
+                                max-width: 1000px; 
+                                margin: auto; 
+                                padding: 10px;">
+    <div class="wrapper" style="width: 100%;
+                                padding: 10px;
+                                overflow: hidden;
+                                display: grid;
+                                grid-template-areas: 'posts posts sectionRight'">
+        <section class="posts" style="grid-area: posts; display: flex; justify-content: space-around; width: 100%; flex-wrap: wrap; padding: 10px;">
+            {{#posts}}
+                <article class="post" style="width: 46%; margin-bottom: 10px; border-radius: 4px; border: 1px solid #cecece;">
+                    <div>
+                        {{! se tiver foto salva, a exibe }}
+                        {{#photo}}
+                            <img src="/media/{{photo}}" alt="imagem" style="max-width: 100%; border-radius: 4px 4px 0 0;"/>
+                        {{/photo}}
+                        {{! senão, exibe uma foto padrão }}
+                        {{^photo}}
+                            <img src="/media/defaultImage___.jpg" alt="imagem" style="max-width: 100%;"/>
+                        {{/photo}}
+                    </div>
+                    <div style="padding: 10px 50px; margin: 20px 0 0; color: gray; text-align: center;">
+                        <span style="font-size: .9rem;">por {{author.name}}</span>
+                    </div>
+                    <div style="padding: 10px 50px; color: gray; text-align: center;">
+                        <span style="">
+                            <a href="/post/{{slug}}" style="font-size: 1.9rem; color: #2f2f2f; text-decoration: none; font-weight: 700;">
+                                {{title}}
+                            </a>
+                        </span>
+                    </div>
+                    <div style="padding: 10px 50px; color: gray; text-align: center;">
+                        <p style="text-align: justify;">{{body}}</p>
+                    </div>
+                    <div style="padding: 10px 50px; color: gray; text-align: center;">
+                        <p style="color: #959595; min-height: 15px;"><small>{{tags}}</small></p>
+                    </div>
+                    <div style="padding: 10px 50px; color: gray; text-align: center;">
+                        {{#user}}
+                            <a style="margin-top: 20px;
+                                    display: inline-block;
+                                    position: absolute;
+                                    background-color: #5b5c5eeb;
+                                    color: #FFF;
+                                    z-index: 22;
+                                    top: 0;
+                                    right: 20px;
+                                    padding: 5px 10px;
+                                    border-radius: 5px;
+                                    text-decoration: none;" 
+                                href="/post/{{slug}}/edit">
+                                [ editar ]
+                            </a>
+                        {{/user}}
+                    </div>
+
+                </article>
+            {{/posts}}
+        </section style="grid-area: sectionRight;">
+
+        <aside>
+            aside
+            <div class="post" style="width: 100%; border: 1px dashed; margin-bottom: 10px;">
+                <div>
+                    {{#posts}}
+                        <img src="/media/{{photo}}" style="max-width: 100%; max-height: 200px; overflow: hidden;"/>
+                    {{/posts}}
+                </div>
+            </div>
+        </aside>
+    </div>
+
 </div>
 
 <div class="container" style="  width: 100%; 
