@@ -24,7 +24,10 @@ const PostSchema = new mongoose.Schema({
         trim: true
     },
     tags: [String],
-    author: ObjectId,
+    author: {
+        type: ObjectId,
+        ref: 'User'
+    },
 });
 
 // evento para slug (pré salvar)
@@ -56,37 +59,6 @@ PostSchema.statics.getTagsList = function () {
         { $unwind: '$tags' }, // separa posts por tags, ex: post com 3 tags, irá replicar 3x o post, 1 para cada tag
         { $group: { _id: '$tags', count: { $sum: 1 } } }, // agrupar em tags / fazer contagem de cada tag
         { $sort: { count: -1, _id: 1 } } // ordena Decrescente pelo COUNT de tag e alfabeticamente
-    ]);
-}
-
-PostSchema.statics.findPosts = function (filters = {}) {
-    return this.aggregate([
-        { $match: filters },
-        {
-            /* 
-                pesquisa em outra parte do BD, informações para juntar ao BD usado aqui
-                o $$ é para referenciar uma variável criada dentro do agregate, para o lookup
-                se usar apenas 1 $, o código entende como sendo um campo da consulta
-            */
-            $lookup: { // sempre retorna um array
-                from: 'users',
-                let: { 'author': '$author' },
-                pipeline: [
-                    // dar match entre as caracteristicas dos campos informados
-                    { $match: { $expr: { $eq: ['$$author', '$_id'] } } },
-                    { $limit: 1 } // para garantir que traga apenas 1 resultado
-                ],
-                as: 'author'
-            }
-        },
-        {
-            /* logo depois do lookup, roda-se esse código para pegar o primeiro item do array */
-            $addFields: {
-                'author': {
-                    $arrayElemAt: ['$author', 0] // função nativa para pegar o valor da posição informada
-                }
-            }
-        }
     ]);
 }
 

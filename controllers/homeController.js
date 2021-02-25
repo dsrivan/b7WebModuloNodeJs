@@ -38,7 +38,7 @@ exports.index = async (request, response) => {
     // recuperar as tags de todos os posts
     const tagsPromise = Post.getTagsList();
     // o find, sem parâmetro, retorna todos os registros
-    const postsPromise = Post.findPosts(postFilter);
+    const postsPromise = Post.find(postFilter).populate('author');
 
     // irá executar as duas consultas ao mesmo tempo, e no retorno da primeira, o código continua para baixo
     const [tags, posts] = await Promise.all([tagsPromise, postsPromise]);

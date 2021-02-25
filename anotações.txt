@@ -109,5 +109,5 @@ passport-local ------------------> login local (uzando o bd local)
 passport-local-mongoose ---------> integração entre o passport e o mongoose
 
 Envio de EMAIL
-Servidor SMTP -------------------> sugestão: mailtrap.io
+Servidor SMTP -------------------> sugestão: (((((((((mailtrap.io)))))))))
 npm install nodemailer --save ---> lib de envio de email
