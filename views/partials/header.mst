@@ -13,11 +13,11 @@
 </head>
 
 <body style="font-family: arial; margin: 0; padding: 0; box-sizing: border-box;">
-    <header style="background-color: #343a40; box-sizing: border-box; position: relative;">
-        <div class="container" style="width: 100%; max-width: 1000px; margin: auto; padding: 10px;">
+    <header style="background-color: #343a40; box-sizing: border-box; position: fixed; top: 0; z-index: 2; width: 100%; padding: 10px 0;">
+        <div class="container" style="box-sizing: border-box; width: 100%; max-width: 1000px; margin: auto; padding: 10px;">
             <div style="display: flex; color: #fff; box-sizing: border-box;">
                 <div style="width: 200px; align-items: center; display: flex; font-size: 24px;">
-                    Blog dsrIvan
+                    Blog
                 </div>
                 <div style="flex: 1;">
                     <nav style="width: 100%; display: flex; justify-content: center;">
@@ -38,7 +38,7 @@
                     {{/user}}
                     {{^user}}
                         <div>
-                            <a style="background-color: #ffc107; padding: 10px; border-radius: 4px; text-decoration: none; color: #000;" href="/users/login">Faça login</a>
+                            <a style="background-color: #ffc107; padding: 10px 30px; border-radius: 4px; text-decoration: none; color: #000;" href="/users/login">Faça login</a>
                         </div>
                     {{/user}}
                 </div>
