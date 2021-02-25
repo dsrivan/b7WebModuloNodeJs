@@ -1,38 +1,128 @@
 {{> header}}
 
-<div class="container" style="box-sizing: border-box; width: 100%; max-width: 1000px; margin: auto; padding: 10px;">
-    <div style="margin-top: 120px; display: flex; box-sizing: border-box;">
-        <div style="width: 60%; border: 1px solid #ccc; box-sizing: border-box; border-radius: 4px; background-color: #ccc; color: #666; font-weight: bold;">
-            <img style="max-width: 100%; border-radius: 4px;" src="/assets/images/imgTitleBlog.jpg">
+<div class="container-full" style=" width: 100%;
+                                    min-height: 50vh;
+                                    height: 50vh;
+                                    max-height: 50vh;
+                                    background-color: #6f6f6f;
+                                    background-image: url('/assets/images/imgTitleBlogTop.jpg');
+                                    background-size: cover;
+                                    background-position: center;
+                                    background-repeat: no-repeat;">
+    <div style="width: 100%; 
+                height: 100%;">
+        <div class="container" style="  width: 100%; 
+                                        max-width: 1000px; 
+                                        margin: auto; 
+                                        padding: 10px;">
+            <div style="display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                        height: 60%;
+                        align-items: center;
+                        color: #fff;">
+                <h1 style=" font-size: 3.5rem; 
+                            margin-bottom: 10px;">
+                    Título
+                </h1>
+                <h3 style=" font-size: 1.3rem;
+                            font-weight: 400; 
+                            text-align: center;
+                            width: 70%;">
+                    Lorem ipsum dolor sit amet.
+                </h3>
+            </div>
         </div>
-        <div style="width: 40%; box-sizing: border-box; padding: 20px; display: flex; flex-direction: column; justify-content: center;">
+    </div>
+</div>
+
+<div class="container" style="  width: 100%; 
+                                max-width: 1000px; 
+                                margin: auto; 
+                                margin: 70px auto;">
+    <div style="display: flex; justify-content: center;">
+        <div style="padding: 5px 10px;"><a style="border: 1px solid #47c9e5; padding: 6px 15px; border-radius: 20px; color: #FFF; cursor: pointer; background-color: #47c9e5; font-weight: bold;">Todos</a></div>
+        <div style="padding: 5px 10px;"><a style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; color: #828282; cursor: pointer;">Tag</a></div>
+        <div style="padding: 5px 10px;"><a style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; color: #828282; cursor: pointer;">Post</a></div>
+        <div style="padding: 5px 10px;"><a style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; color: #828282; cursor: pointer;">Corpo</a></div>
+        <div style="padding: 5px 10px;"><a style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; color: #828282; cursor: pointer;">Teste</a></div>
+        <div style="padding: 5px 10px;"><a style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; color: #828282; cursor: pointer;">Outro</a></div>
+        <div style="padding: 5px 10px;"><a style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; color: #828282; cursor: pointer;">Blob</a></div>
+        <div style="padding: 5px 10px;"><a style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; color: #828282; cursor: pointer;">Título</a></div>
+    </div>
+</div>
+
+<div class="container" style="  width: 100%; 
+                                max-width: 1000px; 
+                                margin: auto; 
+                                padding: 10px;">
+    <div style="margin-top: 120px; 
+                display: flex; 
+                ">
+        <div style="width: 60%; 
+                    border: 1px solid #ccc;
+                    border-radius: 4px; 
+                    background-color: #ccc; 
+                    color: #666; 
+                    font-weight: bold;">
+            <img src="/assets/images/imgTitleBlog.jpg" 
+                style=" max-width: 100%; 
+                        border-radius: 4px;">
+        </div>
+        <div style="width: 40%;                     
+                    padding: 20px; 
+                    display: flex; 
+                    flex-direction: column; 
+                    justify-content: center;">
             <div>
-                <h2 style="margin-top: 0; font-size: 40px; font-weight: lighter; margin-bottom: 15px;">
+                <h2 style=" margin-top: 0; 
+                            font-size: 40px; 
+                            font-weight: lighter; 
+                            margin-bottom: 15px;">
                     Título qualquer
                 </h2>
             </div>
             <div>
-                <p style="text-align: justify; margin-top: 0;">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in nibh mollis, suscipit neque sit amet, semper velit. Curabitur vitae venenatis lorem, at laoreet neque. Fusce sed rhoncus orci.
+                <p style="  text-align: justify; 
+                            margin-top: 0;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in nibh mollis, suscipit neque sit amet, semper velit. Curabitur vitae venenatis lorem, at laoreet neque.
                 </p>
             </div>
             <div>
-                <a style="display: inline-block; color: #fff; background-color: #0d6efd; border-color: #0d6efd; padding: 10px 30px; margin-top: 10px; text-decoration: none; border-radius: 4px;" href="#">
+                <a style="  display: inline-block; 
+                            color: #fff; 
+                            background-color: #0d6efd; 
+                            border-color: #0d6efd; 
+                            padding: 10px 30px; 
+                            margin-top: 10px; 
+                            text-decoration: none; 
+                            border-radius: 4px;" 
+                href="#">
                     Add post
                 </a>
             </div>
         </div>
     </div>
 
-    <div style="background-color: #6c757d; color: #fff; padding: 40px 0; margin: 40px 0; text-align: center; border-radius: 4px;">
+    <div style="background-color: #6c757d; 
+                color: #fff; 
+                padding: 40px 0; 
+                margin: 40px 0; 
+                text-align: center; 
+                border-radius: 4px;">
         <div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in nibh mollis, suscipit neque sit amet.
         </div>
     </div>
 
-    <div class="tags" style="font-size: 12px; margin: 30px 0 20px 0;">
+    <div class="tags" 
+        style=" font-size: 12px; 
+                margin: 30px 0 20px 0;">
         {{#tags}}
-            <div style="border: 1px solid; border-radius: 20px; margin-right: 5px;" class="tag {{class}}">
+            <div style="border: 1px solid; 
+                        border-radius: 20px; 
+                        margin-right: 5px;" 
+            class="tag {{class}}">
                 <a style="text-decoration: none;" href="/?t={{_id}}">
                     {{_id}} ({{count}})
                 </a>
