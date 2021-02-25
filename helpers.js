@@ -15,6 +15,6 @@ exports.menu = [
     { name: 'Contato', slug: '/contato', guest: true, logged: true },
     { name: 'Login', slug: '/users/login', guest: false, logged: false },
     { name: 'Cadastro', slug: '/users/register', guest: true, logged: false },
-    { name: 'Add Post', slug: '/post/add', guest: false, logged: true },
+    { name: 'Add Post', slug: '/post/add', guest: false, logged: false },
     { name: 'Sair', slug: '/users/logout', guest: false, logged: false }
 ]

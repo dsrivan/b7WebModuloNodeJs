@@ -36,11 +36,66 @@
     </div>
 </div>
 
+{{#user}}
+    <div class="container" style="  width: 100%; 
+                                    max-width: 1000px;
+                                    margin: 70px auto 50px;">
+        <div style="margin-top: 80px;
+                    display: flex;
+                    border-bottom: 1px solid #cecece;
+                    padding-bottom: 70px;">
+            <div style="width: 60%; 
+                        border: 1px solid #ccc;
+                        border-radius: 4px; 
+                        background-color: #ccc; 
+                        color: #666; 
+                        font-weight: bold;">
+                <img src="/assets/images/imgTitleBlog.jpg" 
+                    style=" max-width: 100%; 
+                            border-radius: 4px;">
+            </div>
+            <div style="width: 40%;                     
+                        padding: 20px; 
+                        display: flex; 
+                        flex-direction: column; 
+                        justify-content: center;">
+                <div>
+                    <h2 style=" margin-top: 0; 
+                                font-size: 40px; 
+                                font-weight: lighter; 
+                                margin-bottom: 15px;">
+                        Olá, <a style="text-decoration: underline; font-size: 1.8rem; color: gray;" href="/profile">{{user.name}}</a>. <small><a style="color: gray; text-decoration: none;" href="/users/logout">Sair</a></small>
+                    </h2>
+                </div>
+                <div>
+                    <p style="  text-align: justify; 
+                                margin-top: 0;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in nibh mollis, suscipit neque sit amet, semper velit. Curabitur vitae venenatis lorem, at laoreet neque.
+                    </p>
+                </div>
+                <div>
+                    <a style="  display: inline-block; 
+                                color: #fff; 
+                                background-color: #0d6efd; 
+                                border-color: #0d6efd; 
+                                padding: 10px 30px; 
+                                margin-top: 10px; 
+                                text-decoration: none; 
+                                border-radius: 4px;" 
+                    href="/post/add">
+                        Add post
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/user}}
+
 <div class="container" style="  width: 100%; 
                                 max-width: 1000px;
                                 margin: 70px auto 50px;">
     <div style="display: flex; justify-content: center;">
-        <div style="padding: 5px 10px;"><a style="border: 1px solid #47c9e5; padding: 6px 15px; border-radius: 20px; color: #FFF; cursor: pointer; background-color: #47c9e5; font-weight: bold;">Todos</a></div>
+        <div style="padding: 5px 10px;"><a href="/" style="text-decoration: none; border: 1px solid #47c9e5; padding: 6px 15px; border-radius: 20px; color: #FFF; cursor: pointer; background-color: #47c9e5; font-weight: bold;">Todos</a></div>
         <div style="padding: 5px 10px;"><a style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; color: #828282; cursor: pointer;">Tag</a></div>
         <div style="padding: 5px 10px;"><a style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; color: #828282; cursor: pointer;">Post</a></div>
         <div style="padding: 5px 10px;"><a style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; color: #828282; cursor: pointer;">Corpo</a></div>
@@ -60,9 +115,9 @@
                                 overflow: hidden;
                                 display: grid;
                                 grid-template-areas: 'posts posts sectionRight'">
-        <section class="posts" style="grid-area: posts; display: flex; justify-content: space-around; width: 100%; flex-wrap: wrap; padding: 10px;">
+        <section class="posts" style="grid-area: posts; display: flex; /*justify-content: space-around;*/ width: 100%; flex-wrap: wrap; padding: 10px;">
             {{#posts}}
-                <article class="post" style="width: 46%; margin-bottom: 10px; border-radius: 4px; border: 1px solid #cecece;">
+                <article class="post" style="position: relative; width: 46%; margin: 10px; border-radius: 4px; border: 1px solid #cecece;">
                     <div>
                         {{! se tiver foto salva, a exibe }}
                         {{#photo}}
@@ -86,14 +141,21 @@
                     <div style="padding: 10px 50px; color: gray; text-align: center;">
                         <p style="text-align: justify;">{{body}}</p>
                     </div>
-                    <div style="padding: 10px 50px; color: gray; text-align: center;">
-                        <p style="color: #959595; min-height: 15px;"><small>{{tags}}</small></p>
+
+                    <hr style="margin: 15px 50px;color: #cecece;">
+
+                    <div style="padding: 10px 50px; color: gray; text-align: center; margin-bottom: 30px;">
+                        <p><b>TAGS</b></p>
+                        <p style="color: #959595; min-height: 15px;">
+                            <small>
+                                {{tags}}
+                            </small>
+                        </p>
                     </div>
-                    <div style="padding: 10px 50px; color: gray; text-align: center;">
+                    <div style="padding: 10px 50px; color: gray; text-align: center; position: absolute; top: 0; right: 0;">
                         {{#user}}
                             <a style="margin-top: 20px;
                                     display: inline-block;
-                                    position: absolute;
                                     background-color: #5b5c5eeb;
                                     color: #FFF;
                                     z-index: 22;
@@ -113,131 +175,24 @@
         </section style="grid-area: sectionRight;">
 
         <aside>
-            aside
-            <div class="post" style="width: 100%; border: 1px dashed; margin-bottom: 10px;">
-                <div>
-                    {{#posts}}
-                        <img src="/media/{{photo}}" style="max-width: 100%; max-height: 200px; overflow: hidden;"/>
-                    {{/posts}}
-                </div>
+            <h2 style="font-size: 1.7rem;">Tags populares</h2>
+            <div class="tags" style="display: flex; flex-direction: column; font-size: 12px; margin: 30px 0 20px 0;">
+                {{#tags}}
+                    <div style="margin-bottom: 5px; display: inherit;" class="tag {{class}}">
+                        <a style="max-width: 200px; text-decoration: none; border: 1px solid #343a40; background-color: #343a40; color: #fff; padding: 7px 15px; border-radius: 4px; margin-bottom: 10px;" href="/?t={{_id}}">
+                            {{_id}} ({{count}})
+                        </a>
+                    </div>
+                {{/tags}}
             </div>
         </aside>
     </div>
 
 </div>
 
-<div class="container" style="  width: 100%; 
-                                max-width: 1000px; 
-                                margin: auto; 
-                                padding: 10px;">
-    <div style="margin-top: 120px; 
-                display: flex; 
-                ">
-        <div style="width: 60%; 
-                    border: 1px solid #ccc;
-                    border-radius: 4px; 
-                    background-color: #ccc; 
-                    color: #666; 
-                    font-weight: bold;">
-            <img src="/assets/images/imgTitleBlog.jpg" 
-                style=" max-width: 100%; 
-                        border-radius: 4px;">
-        </div>
-        <div style="width: 40%;                     
-                    padding: 20px; 
-                    display: flex; 
-                    flex-direction: column; 
-                    justify-content: center;">
-            <div>
-                <h2 style=" margin-top: 0; 
-                            font-size: 40px; 
-                            font-weight: lighter; 
-                            margin-bottom: 15px;">
-                    Título qualquer
-                </h2>
-            </div>
-            <div>
-                <p style="  text-align: justify; 
-                            margin-top: 0;">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in nibh mollis, suscipit neque sit amet, semper velit. Curabitur vitae venenatis lorem, at laoreet neque.
-                </p>
-            </div>
-            <div>
-                <a style="  display: inline-block; 
-                            color: #fff; 
-                            background-color: #0d6efd; 
-                            border-color: #0d6efd; 
-                            padding: 10px 30px; 
-                            margin-top: 10px; 
-                            text-decoration: none; 
-                            border-radius: 4px;" 
-                href="#">
-                    Add post
-                </a>
-            </div>
-        </div>
+<div class="container" style="width: 100%; max-width: 1000px; margin: auto; padding: 10px;">
+        {{! conteúdo }}
     </div>
-
-    <div style="background-color: #6c757d; 
-                color: #fff; 
-                padding: 40px 0; 
-                margin: 40px 0; 
-                text-align: center; 
-                border-radius: 4px;">
-        <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in nibh mollis, suscipit neque sit amet.
-        </div>
-    </div>
-
-    <div class="tags" 
-        style=" font-size: 12px; 
-                margin: 30px 0 20px 0;">
-        {{#tags}}
-            <div style="border: 1px solid; 
-                        border-radius: 20px; 
-                        margin-right: 5px;" 
-            class="tag {{class}}">
-                <a style="text-decoration: none;" href="/?t={{_id}}">
-                    {{_id}} ({{count}})
-                </a>
-            </div>
-        {{/tags}}
-    </div>
-
-    {{#posts}}
-        <div class="post" style="position: relative;">
-            {{! se tiver foto, a exibe }}
-            {{#photo}}
-                <img src="/media/{{photo}}" alt="imagem" />
-            {{/photo}}
-            {{! senão, exibe uma foto padrão }}
-            {{^photo}}
-                <img src="/media/defaultImage___.jpg" alt="imagem" />
-            {{/photo}}
-
-            <h3><a href="/post/{{slug}}">{{title}}</a></h3>
-            <small><b>Autor:</b> {{author.name}}</small>
-            <p style="text-align: justify;">{{body}}</p>
-
-            <p style="color: #959595; min-height: 15px;"><small>{{tags}}</small></p>
-            {{#user}}
-                <a style="margin-top: 20px;
-                        display: inline-block;
-                        position: absolute;
-                        background-color: #5b5c5eeb;
-                        color: #FFF;
-                        z-index: 22;
-                        top: 0;
-                        right: 20px;
-                        padding: 5px 10px;
-                        border-radius: 5px;
-                        text-decoration: none;" 
-                    href="/post/{{slug}}/edit">
-                    [ editar ]
-                </a>
-            {{/user}}
-        </div>
-    {{/posts}}
 
     {{^posts}}
         <div style="padding: 20px; text-align: center; margin-bottom: 50px;">

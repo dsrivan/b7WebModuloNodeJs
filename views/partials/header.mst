@@ -44,11 +44,6 @@
                     </nav>
                 </div>
                 <div style="width: 150px; display: flex; justify-content: center; align-items: center;">
-                    {{#user}}
-                        <div>
-                            Olá, <a style="text-decoration: underline;" href="/profile">{{user.name}}</a>. <small><a style="color: gray;" href="/users/logout">Sair</a></small>
-                        </div>
-                    {{/user}}
                     {{^user}}
                         <div>
                             <a style="border: 1px solid #FFF; padding: 10px 30px; border-radius: 4px; text-decoration: none; color: #FFF;" href="/users/login">Login</a>
