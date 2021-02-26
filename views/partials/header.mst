@@ -21,6 +21,7 @@
         }
         body {
             font-family: 'Montserrat','Raleway','Helvetica','Arial',sans-serif;
+            background-color: #f5f5f5;
         }
     </style>
 </head>

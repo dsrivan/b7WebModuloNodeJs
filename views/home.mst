@@ -117,7 +117,7 @@
                                 grid-template-areas: 'posts posts sectionRight'">
         <section class="posts" style="grid-area: posts; display: flex; /*justify-content: space-around;*/ width: 100%; flex-wrap: wrap; padding: 10px;">
             {{#posts}}
-                <article class="post" style="position: relative; width: 46%; margin: 10px; border-radius: 4px; border: 1px solid #cecece;">
+                <article class="post" style="position: relative; width: 46%; margin: 10px; border-radius: 4px; /*border: 1px solid #cecece;*/ background-color: #fff; box-shadow: 0px 0px 20px #ddd;">
                     <div>
                         {{! se tiver foto salva, a exibe }}
                         {{#photo}}
