@@ -95,14 +95,14 @@
                                 max-width: 1000px;
                                 margin: 70px auto 50px;">
     <div style="display: flex; justify-content: center;">
-        <div style="padding: 5px 10px;"><a href="/" style="text-decoration: none; border: 1px solid #47c9e5; padding: 6px 15px; border-radius: 20px; color: #FFF; cursor: pointer; background-color: #47c9e5; font-weight: bold;">Todos</a></div>
-        <div style="padding: 5px 10px;"><a style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; color: #828282; cursor: pointer;">Tag</a></div>
-        <div style="padding: 5px 10px;"><a style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; color: #828282; cursor: pointer;">Post</a></div>
-        <div style="padding: 5px 10px;"><a style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; color: #828282; cursor: pointer;">Corpo</a></div>
-        <div style="padding: 5px 10px;"><a style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; color: #828282; cursor: pointer;">Teste</a></div>
-        <div style="padding: 5px 10px;"><a style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; color: #828282; cursor: pointer;">Outro</a></div>
-        <div style="padding: 5px 10px;"><a style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; color: #828282; cursor: pointer;">Blob</a></div>
-        <div style="padding: 5px 10px;"><a style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; color: #828282; cursor: pointer;">Título</a></div>
+        <div style="padding: 5px 10px;"><a href="/" style="border: 1px solid #47c9e5; padding: 6px 15px; border-radius: 20px; cursor: pointer; font-size: .9rem; text-decoration: none; color: #FFFFFF; background-color: #47c9e5; font-weight: bold;">Todos</a></div>
+        <div style="padding: 5px 10px;"><a href="#" style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; cursor: pointer; font-size: .9rem; text-decoration: none; color: #828282; ">Tag</a></div>
+        <div style="padding: 5px 10px;"><a href="#" style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; cursor: pointer; font-size: .9rem; text-decoration: none; color: #828282; ">Post</a></div>
+        <div style="padding: 5px 10px;"><a href="#" style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; cursor: pointer; font-size: .9rem; text-decoration: none; color: #828282; ">Corpo</a></div>
+        <div style="padding: 5px 10px;"><a href="#" style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; cursor: pointer; font-size: .9rem; text-decoration: none; color: #828282; ">Teste</a></div>
+        <div style="padding: 5px 10px;"><a href="#" style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; cursor: pointer; font-size: .9rem; text-decoration: none; color: #828282; ">Outro</a></div>
+        <div style="padding: 5px 10px;"><a href="#" style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; cursor: pointer; font-size: .9rem; text-decoration: none; color: #828282; ">Blob</a></div>
+        <div style="padding: 5px 10px;"><a href="#" style="border: 1px solid #bfbcbc; padding: 6px 15px; border-radius: 20px; cursor: pointer; font-size: .9rem; text-decoration: none; color: #828282; ">Título</a></div>
     </div>
 </div>
 
