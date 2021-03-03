@@ -9,23 +9,23 @@
         <title>Site - {{h.defaultPageTitle}}</title>
     {{/pageTitle}}
     
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,600,700,300i,400i,600i,700i,|Montserrat:200,300,300i,400,400i,600,600i,700,700i,&amp;subset=latin" type="text/css" media="all">
-    <link rel="stylesheet" href="/assets/css/template.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,600,700,300i,400i,600i,700i,|Montserrat:200,300,300i,400,400i,600,600i,700,700i,&amp;subset=latin" media="all">
+    <link rel="stylesheet" type="text/css" href="/assets/css/template.css">
 </head>
 
 <body>
     <header>
         <div class="container">
-            <div class="navTitle">
-                <div class="navTitle-Inner">
+            <div class="nav">
+                <div class="navTitle">
                     Blog
                 </div>
-                <div style="flex: 1;">
-                    <nav style="width: 100%; display: flex; justify-content: flex-end;">
-                        <ul style="display: flex; margin: 0;">
+                <div class="navNav">
+                    <nav>
+                        <ul>
                             {{#h.menu}}
-                                <li style="display: inline-block; cursor: pointer;">
-                                    <a href="{{slug}}" style="color: #fff; padding: 10px 20px; text-decoration: none; display: inherit;">{{name}}</a>
+                                <li>
+                                    <a href="{{slug}}">{{name}}</a>
                                 </li>
                             {{/h.menu}}
                         </ul>

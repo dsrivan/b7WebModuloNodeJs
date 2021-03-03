@@ -37,16 +37,43 @@ header {
   padding: 20px 0;
 }
 
-header .navTitle {
+header .container .nav {
   display: flex;
   color: #fff;
 }
 
-header .navTitle .navTitle-Inner {
+header .container .nav .navTitle {
   width: 200px;
   align-items: center;
   display: flex;
   font-size: 24px;
+}
+
+header .container .nav .navNav {
+  flex: 1;
+}
+
+header .container .nav .navNav nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+header .container .nav .navNav nav ul {
+  display: flex;
+  margin: 0;
+}
+
+header .container .nav .navNav nav ul li {
+  display: inline-block;
+  cursor: pointer;
+}
+
+header .container .nav .navNav nav ul li a {
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inherit;
 }
 
 footer {
