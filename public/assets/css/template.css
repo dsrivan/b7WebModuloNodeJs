@@ -16,4 +16,19 @@ body {
 
 .toggleBGNavigation {
   background-color: #343a40 !important;
+  padding: 10px 0 !important;
+}
+
+footer {
+  width: 100%;
+  min-height: 15vh;
+  box-sizing: border-box;
+  border: none;
+  padding: 10px 20px;
+  background-color: #363737;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -9,6 +9,6 @@ window.addEventListener('scroll', () => {
     } else {
         if (header.classList.contains('toggleBGNavigation'));
         header.classList.remove('toggleBGNavigation');
-    }
+    } impor
 });
 /* alterar visual menu de navegação da HOME - Fim */
