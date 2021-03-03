@@ -33,7 +33,7 @@ body {
   padding: 10px 20px;
   position: absolute;
   right: 10px;
-  top: 70px;
+  top: 100px;
   border-radius: 4px;
 }
 
@@ -289,6 +289,63 @@ header .container .nav .divUser div a {
   outline: none;
 }
 /* PÁGINA LOGIN - FIM */
+
+/* PÁGINA FORGET - INICIO */
+.divForget {
+  padding: 50px 20px;
+  height: 85vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.divForget form {
+  width: 550px;
+  min-width: 550px;
+  max-width: 550px;
+  border: 1px solid #d0cece;
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.divForget form h1 {
+  margin: 10px 0 20px 0;
+  font-size: 2rem;
+}
+
+.divForget form .divForget-Email {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.divForget form .divForget-BtnSubmit {
+  margin: 20px 0 10px;
+  width: 100%;
+}
+
+.divForget form .divForget-Email input[type="text"] {
+  width: 100%;
+}
+
+.divForget form .divForget-BtnSubmit input[type="submit"] {
+  background-color: #1abd59;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+/* PÁGINA FORGET - FIM */
 
 /* FOOTER - INICIO */
 footer {

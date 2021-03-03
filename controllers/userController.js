@@ -145,7 +145,7 @@ exports.forgetAction = async (request, response) => {
     });
 
     /* mensagem ao usuário e redirect */
-    request.flash('success', 'As instruções foram enviadas para o seu email.');
+    request.flash('success', 'As instruções foram enviadas para o seu email.' + resetLink);
     response.redirect('/users/login');
 }
 
