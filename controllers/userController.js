@@ -32,7 +32,7 @@ exports.loginAction = (request, response) => {
         });
 
         // sucesso na autenticação
-        request.flash('success', 'Foi logado!!!!');
+        //request.flash('success', 'Foi logado!!!!');
         response.redirect('/');
     });
 }
