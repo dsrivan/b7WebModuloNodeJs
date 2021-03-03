@@ -326,12 +326,12 @@ header .container .nav .divUser div a {
   width: 100%;
 }
 
-.divForget form .divForget-BtnSubmit {
-  margin: 20px 0 10px;
+.divForget form .divForget-Email input[type="text"] {
   width: 100%;
 }
 
-.divForget form .divForget-Email input[type="text"] {
+.divForget form .divForget-BtnSubmit {
+  margin: 20px 0 10px;
   width: 100%;
 }
 
@@ -346,6 +346,65 @@ header .container .nav .divUser div a {
   outline: none;
 }
 /* PÁGINA FORGET - FIM */
+
+/* PÁGINA RESET - INICIO */
+.divReset {
+  padding: 50px 20px;
+  height: 85vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.divReset form {
+  width: 550px;
+  min-width: 550px;
+  max-width: 550px;
+  border: 1px solid #d0cece;
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.divReset form h1 {
+  margin: 10px 0 20px 0;
+  font-size: 2rem;
+}
+
+.divReset form .divReset-Pass,
+.divReset form .divReset-PassConfirm {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.divReset form .divReset-Pass input[type="password"],
+.divReset form .divReset-PassConfirm input[type="password"] {
+  width: 100%;
+}
+
+.divReset form .divReset-BtnSubmit {
+  margin: 20px 0 10px;
+  width: 100%;
+}
+
+.divReset form .divReset-BtnSubmit input[type="submit"] {
+  background-color: #1abd59;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+/* PÁGINA RESET - FIM */
 
 /* FOOTER - INICIO */
 footer {
