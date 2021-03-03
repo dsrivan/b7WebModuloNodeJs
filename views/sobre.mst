@@ -1,13 +1,13 @@
 {{> header}}
 
-<section style="
-    padding: 50px 20px;
-    height: auto;
-    box-sizing: border-box;
-    ">
+<section class="divSobre">
     <p>
         Sobre
     </p>
 </section>
+
+<script type="text/javascript">
+    classListAdd(document.getElementsByTagName('header')[0], 'toggleBGNavigation');
+</script>
 
 {{> footer}}

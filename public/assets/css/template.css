@@ -1,3 +1,4 @@
+/* CONFIGURAÇÕES PADRÃO - INICIO */
 :root {
   --cinzaescuro: #343a40 !important;
 }
@@ -13,7 +14,9 @@ body {
   font-family: "Montserrat", "Raleway", "Helvetica", "Arial", sans-serif;
   background-color: #f5f5f5;
 }
+/* CONFIGURAÇÕES PADRÃO- FIM */
 
+/* CLASSES GERAIS - INICIO */
 .container {
   width: 100%;
   max-width: 1000px;
@@ -48,7 +51,9 @@ body {
   background-color: #0dcaf0;
   color: #000;
 }
+/* CLASSES GERAIS - FIM */
 
+/* HEADER - INICIO */
 header {
   transition: all 0.2s linear;
   font-weight: 700;
@@ -113,7 +118,120 @@ header .container .nav .divUser div a {
   text-decoration: none;
   color: #fff;
 }
+/* HEADER - FIM */
 
+/* PÁGINA 404 - INICIO */
+.div404 {
+  padding: 50px 20px;
+  height: 85vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.div404 h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+.div404 p {
+  font-size: 1.5rem;
+}
+/* PÁGINA 404 - FIM */
+
+/* PÁGINA CONTATO - INICIO */
+.divContato {
+  padding: 50px 20px;
+  height: 85vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.divContato p {
+  font-size: 1.5rem;
+}
+/* PÁGINA CONTATO - FIM */
+
+/* PÁGINA SOBRE - INICIO */
+.divSobre {
+  padding: 50px 20px;
+  height: 85vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.divSobre p {
+  font-size: 1.5rem;
+}
+/* PÁGINA SOBRE - FIM */
+
+/* PÁGINA REGISTER - INICIO */
+.divRegister {
+  padding: 50px 20px;
+  height: 85vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.divRegister form {
+  width: 550px;
+  min-width: 550px;
+  max-width: 550px;
+  border: 1px solid #d0cece;
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.divRegister form h1 {
+  margin: 10px 0 20px 0;
+  font-size: 2rem;
+}
+
+.divRegister form .divRegister-Name,
+.divRegister form .divRegister-Email,
+.divRegister form .divRegister-Senha {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.divRegister form .divRegister-BtnSubmit {
+  margin: 20px 0 10px;
+  width: 100%;
+}
+
+.divRegister form .divRegister-Name input[type="text"],
+.divRegister form .divRegister-Email input[type="text"],
+.divRegister form .divRegister-Senha input[type="password"] {
+  width: 100%;
+}
+
+.divRegister form .divRegister-BtnSubmit input[type="submit"] {
+  background-color: #1abd59;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+/* PÁGINA REGISTER - FIM */
+
+/* FOOTER - INICIO */
 footer {
   width: 100%;
   min-height: 15vh;
@@ -127,3 +245,4 @@ footer {
   align-items: center;
   justify-content: center;
 }
+/* FOOTER - FIM */

@@ -1,14 +1,14 @@
 {{> header}}
 
-<section style="
-    padding: 50px 20px;
-    height: auto;
-    box-sizing: border-box;
-    ">
+<section class="div404">
     <h1>Error 404</h1>
     <p>
         Página não encontrada
     </p>
 </section>
+
+<script type="text/javascript">
+    classListAdd(document.getElementsByTagName('header')[0], 'toggleBGNavigation');
+</script>
 
 {{> footer}}
