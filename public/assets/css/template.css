@@ -37,6 +37,18 @@ header {
   padding: 20px 0;
 }
 
+header .navTitle {
+  display: flex;
+  color: #fff;
+}
+
+header .navTitle .navTitle-Inner {
+  width: 200px;
+  align-items: center;
+  display: flex;
+  font-size: 24px;
+}
+
 footer {
   width: 100%;
   min-height: 15vh;

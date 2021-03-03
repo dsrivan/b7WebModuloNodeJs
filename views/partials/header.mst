@@ -16,8 +16,8 @@
 <body>
     <header>
         <div class="container">
-            <div style="display: flex; color: #fff; ">
-                <div style="width: 200px; align-items: center; display: flex; font-size: 24px;">
+            <div class="navTitle">
+                <div class="navTitle-Inner">
                     Blog
                 </div>
                 <div style="flex: 1;">
