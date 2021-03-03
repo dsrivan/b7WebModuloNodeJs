@@ -26,6 +26,29 @@ body {
   padding: 10px 0 !important;
 }
 
+.divWarning {
+  padding: 10px 20px;
+  position: absolute;
+  right: 10px;
+  top: 70px;
+  border-radius: 4px;
+}
+
+.divWarning.success {
+  background-color: #198754;
+  color: #fff;
+}
+
+.divWarning.error {
+  background-color: #bb2d3b;
+  color: #fff;
+}
+
+.divWarning.info {
+  background-color: #0dcaf0;
+  color: #000;
+}
+
 header {
   transition: all 0.2s linear;
   font-weight: 700;
@@ -74,6 +97,21 @@ header .container .nav .navNav nav ul li a {
   padding: 10px 20px;
   text-decoration: none;
   display: inherit;
+}
+
+header .container .nav .divUser {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .container .nav .divUser div a {
+  border: 1px solid #fff;
+  padding: 10px 30px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #fff;
 }
 
 footer {
