@@ -10,7 +10,7 @@ const fnToggleBGNavigation = () => {
         } else {
             if (header.classList.contains('toggleBGNavigation'));
             classListRemove(header, 'toggleBGNavigation');
-        } impor
+        }
     });
 }
 

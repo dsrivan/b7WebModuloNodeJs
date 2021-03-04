@@ -64,8 +64,24 @@ body {
   color: #000;
 }
 
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
 .mt30 {
   margin-top: 30px;
+}
+
+.mt100 {
+  margin-top: 100px;
 }
 
 .m70Auto50 {
@@ -74,6 +90,10 @@ body {
 
 .w100 {
   width: 100% !important;
+}
+
+.h100px {
+  height: 100px !important;
 }
 
 .dNone {
@@ -770,5 +790,88 @@ footer {
   text-align: center;
   margin-bottom: 50px;
 }
-
 /* PÁGINA HOME - FIM */
+
+/* PÁGINA EDIT POST - INICIO */
+.container .divEditPost {
+  min-height: 72.4vh;
+}
+
+.container .divEditPost h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin: 10px 0 20px 0;
+}
+
+.container .divEditPost .divEditPost-Inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.container .divEditPost .divEditPost-Inner .divEditPost-Inner--Photo,
+.container .divEditPost .divEditPost-Inner .divEditPost-Inner--Texts {
+  width: 50%;
+  padding: 10px;
+}
+
+.container .divEditPost .divEditPost-Inner .divEditPost-Inner--Photo img {
+  max-width: 100%;
+}
+
+.container .divEditPost .divEditPost-Inner .divEditPost-Inner--Texts form {
+  max-width: 600px;
+  border: 1px solid #d0cece;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.container .divEditPost .divEditPost-Inner .divEditPost-Inner--Texts textarea {
+  resize: none;
+  border: 1px solid #cdc7c2;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.container
+  .divEditPost
+  .divEditPost-Inner
+  .divEditPost-Inner--Texts
+  .tagsSmall {
+  font-weight: 100;
+  font-style: italic;
+}
+
+.container
+  .divEditPost
+  .divEditPost-Inner
+  .divEditPost-Inner--Texts
+  input[type="file"] {
+  background-color: #fff;
+  border: 1px solid #cdc7c2;
+  border-radius: 5px;
+}
+
+.container
+  .divEditPost
+  .divEditPost-Inner
+  .divEditPost-Inner--Texts
+  input[type="submit"] {
+  background-color: #1abd59;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+/* PÁGINA EDIT POST - FIM */

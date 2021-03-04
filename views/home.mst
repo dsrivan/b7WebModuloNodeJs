@@ -1,130 +1,126 @@
 {{> header}}
 
-<div class="container-full">
-    <div class="container">
-        <div class="bannerTitle">
-            <h1>Título</h1>
-            <h3>Lorem ipsum dolor sit amet.</h3>
+<section>
+    <div class="container-full">
+        <div class="container">
+            <div class="bannerTitle">
+                <h1>Título</h1>
+                <h3>Lorem ipsum dolor sit amet.</h3>
+            </div>
+        </div>    
+    </div>
+    {{#user}}
+        <div class="container m70Auto50">
+            <div class="divBlockUser">
+                <div class="divBlockUser-Image">
+                    <img src="/assets/images/imgTitleBlog.jpg">
+                </div>
+                <div class="divBlockUser-Inner">
+                    <div>
+                        <h2>
+                            Olá, <a class="divBlockUser-Inner--LinkProfile" href="/profile">{{user.name}}</a>. <small><a class="divBlockUser-Inner--LinkOut" href="/users/logout">Sair</a></small>
+                        </h2>
+                    </div>
+                    <div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in nibh mollis, suscipit neque sit amet, semper velit. Curabitur vitae venenatis lorem, at laoreet neque.
+                        </p>
+                    </div>
+                    <div class="mt30">
+                        <a class="divBlockUser-Inner--BtnAddPost" href="/post/add">Add post</a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>    
-</div>
-
-{{#user}}
+    {{/user}}
     <div class="container m70Auto50">
-        <div class="divBlockUser">
-            <div class="divBlockUser-Image">
-                <img src="/assets/images/imgTitleBlog.jpg">
-            </div>
-            <div class="divBlockUser-Inner">
-                <div>
-                    <h2>
-                        Olá, <a class="divBlockUser-Inner--LinkProfile" href="/profile">{{user.name}}</a>. <small><a class="divBlockUser-Inner--LinkOut" href="/users/logout">Sair</a></small>
-                    </h2>
-                </div>
-                <div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in nibh mollis, suscipit neque sit amet, semper velit. Curabitur vitae venenatis lorem, at laoreet neque.
-                    </p>
-                </div>
-                <div class="mt30">
-                    <a class="divBlockUser-Inner--BtnAddPost" href="/post/add">Add post</a>
-                </div>
-            </div>
+        <div class="divDefaultTags">
+            <div class="divDefaultTag"><a href="/" class="defaultTagActive">Todos</a></div>
+            <div class="divDefaultTag"><a href="#">Tag</a></div>
+            <div class="divDefaultTag"><a href="#">Post</a></div>
+            <div class="divDefaultTag"><a href="#">Corpo</a></div>
+            <div class="divDefaultTag"><a href="#">Teste</a></div>
+            <div class="divDefaultTag"><a href="#">Outro</a></div>
+            <div class="divDefaultTag"><a href="#">Blob</a></div>
+            <div class="divDefaultTag"><a href="#">Título</a></div>
         </div>
     </div>
-{{/user}}
-
-<div class="container m70Auto50">
-    <div class="divDefaultTags">
-        <div class="divDefaultTag"><a href="/" class="defaultTagActive">Todos</a></div>
-        <div class="divDefaultTag"><a href="#">Tag</a></div>
-        <div class="divDefaultTag"><a href="#">Post</a></div>
-        <div class="divDefaultTag"><a href="#">Corpo</a></div>
-        <div class="divDefaultTag"><a href="#">Teste</a></div>
-        <div class="divDefaultTag"><a href="#">Outro</a></div>
-        <div class="divDefaultTag"><a href="#">Blob</a></div>
-        <div class="divDefaultTag"><a href="#">Título</a></div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="wrapper">
-        <section class="posts">
-            {{#posts}}
-                <article class="post">
-                    <div class="post-Inner">
-                        <div class="post-Inner--Image">
-                            {{! se tiver foto salva, a exibe }}
-                            {{#photo}}
-                                <img src="/media/{{photo}}" alt="imagem"/>
-                            {{/photo}}
-                            {{! senão, exibe uma foto padrão }}
-                            {{^photo}}
-                                <img src="/media/defaultImage___.jpg" alt="imagem"/>
-                            {{/photo}}
-                            <div class="post-Inner--Image-PhotoTag">
-                                <span>palavra</span>
+    <div class="container">
+        <div class="wrapper">
+            <section class="posts">
+                {{#posts}}
+                    <article class="post">
+                        <div class="post-Inner">
+                            <div class="post-Inner--Image">
+                                {{! se tiver foto salva, a exibe }}
+                                {{#photo}}
+                                    <img src="/media/{{photo}}" alt="imagem"/>
+                                {{/photo}}
+                                {{! senão, exibe uma foto padrão }}
+                                {{^photo}}
+                                    <img src="/media/defaultImage___.jpg" alt="imagem"/>
+                                {{/photo}}
+                                <div class="post-Inner--Image-PhotoTag">
+                                    <span>palavra</span>
+                                </div>
+                            </div>
+                            <div class="post-Inner--Author">
+                                <span>por {{author.name}}</span>
+                            </div>
+                            <div class="post-Inner--Title">
+                                <span>
+                                    <a href="/post/{{slug}}">
+                                        {{title}}
+                                    </a>
+                                </span>
+                            </div>
+                            <div class="post-Inner--Body">
+                                <p>{{body}}</p>
+                            </div>
+                            <div class="post-Inner--PostTags">
+                                <p><small>{{tags}}</small></p>
+                            </div>
+                            <div class="post-Inner--BtnEdit">
+                                {{#user}}
+                                    <a href="/post/{{slug}}/edit">[ editar ]</a>
+                                {{/user}}
                             </div>
                         </div>
-                        <div class="post-Inner--Author">
-                            <span>por {{author.name}}</span>
-                        </div>
-                        <div class="post-Inner--Title">
-                            <span>
-                                <a href="/post/{{slug}}">
-                                    {{title}}
-                                </a>
-                            </span>
-                        </div>
-                        <div class="post-Inner--Body">
-                            <p>{{body}}</p>
-                        </div>
-                        <div class="post-Inner--PostTags">
-                            <p><small>{{tags}}</small></p>
-                        </div>
-                        <div class="post-Inner--BtnEdit">
-                            {{#user}}
-                                <a href="/post/{{slug}}/edit">[ editar ]</a>
-                            {{/user}}
-                        </div>
+                    </article>
+                {{/posts}}
+            </section>
+            <aside class="sectionRight">
+                <div class="sectionRight-DivBuscar w100">                
+                    <label>Buscar</label>
+                    <div class="w100">
+                        <form>
+                            <input type="text" name="buscar" placeholder="busque por...">
+                            <input type="submit" value="Ir">
+                        </form>
                     </div>
-                </article>
-            {{/posts}}
-        </section>
-
-        <aside class="sectionRight">
-            <div class="sectionRight-DivBuscar w100">                
-                <label>Buscar</label>
-                <div class="w100">
-                    <form>
-                        <input type="text" name="buscar" placeholder="busque por...">
-                        <input type="submit" value="Ir">
-                    </form>
                 </div>
-            </div>
-            <div class="sectionRight-PostsTags"> 
-                <h2>Tags populares</h2>
-                <div class="PostsTag">
-                    {{#tags}}
-                        <div class="PTag {{class}}">
-                            <a href="/?t={{_id}}">
-                                {{_id}} <span class="dNone">({{count}})</span>
-                            </a>
-                        </div>
-                    {{/tags}}
+                <div class="sectionRight-PostsTags"> 
+                    <h2>Tags populares</h2>
+                    <div class="PostsTag">
+                        {{#tags}}
+                            <div class="PTag {{class}}">
+                                <a href="/?t={{_id}}">
+                                    {{_id}} <span class="dNone">({{count}})</span>
+                                </a>
+                            </div>
+                        {{/tags}}
+                    </div>
                 </div>
-            </div>
-        </aside>
-    </div>
-
-</div>
-
-<div class="container">
-    {{^posts}}
-        <div class="divNoPosts">
-            Nenhm post a ser exibido!
+            </aside>
         </div>
-    {{/posts}}
-</div>
+    </div>
+    <div class="container">
+        {{^posts}}
+            <div class="divNoPosts">
+                Nenhm post a ser exibido!
+            </div>
+        {{/posts}}
+    </div>
+</section>
 
 {{> footer}}
