@@ -10,11 +10,11 @@ exports.menu = [
         }
     */
 
-    { name: 'Home', slug: '/', guest: true, logged: true },
-    { name: 'Sobre', slug: '/sobre', guest: true, logged: true },
-    { name: 'Contato', slug: '/contato', guest: true, logged: true },
-    { name: 'Login', slug: '/users/login', guest: false, logged: false },
-    { name: 'Cadastro', slug: '/users/register', guest: true, logged: false },
-    { name: 'Add Post', slug: '/post/add', guest: false, logged: false },
-    { name: 'Sair', slug: '/users/logout', guest: false, logged: false }
+    { name: 'Home', id: 'mHome', slug: '/', guest: true, logged: true },
+    { name: 'Sobre', id: 'mSobre', slug: '/sobre', guest: true, logged: true },
+    { name: 'Contato', id: 'mContato', slug: '/contato', guest: true, logged: true },
+    { name: 'Login', id: 'mLogin', slug: '/users/login', guest: false, logged: false },
+    { name: 'Cadastro', id: 'mCadastro', slug: '/users/register', guest: true, logged: false },
+    { name: 'Add Post', id: 'mAddPost', slug: '/post/add', guest: false, logged: false },
+    { name: 'Sair', id: 'mSair', slug: '/users/logout', guest: false, logged: false }
 ]

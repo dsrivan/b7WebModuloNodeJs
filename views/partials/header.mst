@@ -27,7 +27,7 @@
                         <ul>
                             {{#h.menu}}
                                 <li>
-                                    <a href="{{slug}}">{{name}}</a>
+                                    <a id={{id}} name={{id}} href="{{slug}}">{{name}}</a>
                                 </li>
                             {{/h.menu}}
                         </ul>
