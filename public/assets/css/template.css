@@ -17,6 +17,18 @@ body {
 /* CONFIGURAÇÕES PADRÃO- FIM */
 
 /* CLASSES GERAIS - INICIO */
+.container-full {
+  width: 100%;
+  min-height: 60vh;
+  height: 60vh;
+  max-height: 60vh;
+  background-color: #6f6f6f;
+  background-image: url("/assets/images/imgTitleBlogTop.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .container {
   width: 100%;
   max-width: 1000px;
@@ -268,6 +280,10 @@ header .container .nav .divUser div a {
   width: 100%;
 }
 
+.divLogin form .divLogin-Esqueci {
+  align-self: self-start;
+}
+
 .divLogin form .divLogin-BtnSubmit {
   margin: 20px 0 10px;
   width: 100%;
@@ -421,3 +437,74 @@ footer {
   justify-content: center;
 }
 /* FOOTER - FIM */
+
+/* PÁGINA HOME - INICIO */
+.container-full .container .bannerTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 55%;
+  align-items: center;
+  color: #fff;
+}
+
+.container-full .container .bannerTitle h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.container-full .container .bannerTitle h3 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  text-align: center;
+  width: 70%;
+}
+
+.container .divBlockUser {
+  margin-top: 80px;
+  display: flex;
+  border-bottom: 1px solid #cecece;
+  padding-bottom: 70px;
+}
+
+.container .divBlockUser .divBlockUser-Image {
+  width: 55%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #ccc;
+  color: #666;
+  font-weight: bold;
+}
+
+.container .divBlockUser .divBlockUser-Image img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.container .divBlockUser .divBlockUser-Inner {
+  width: 45%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container .divBlockUser .divBlockUser-Inner h2 {
+  margin-top: 0;
+  font-size: 40px;
+  font-weight: lighter;
+  margin-bottom: 15px;
+}
+
+.container .divBlockUser .divBlockUser-Inner .divBlockUser-Inner--LinkProfile {
+  text-decoration: underline;
+  font-size: 1.8rem;
+  color: gray;
+}
+
+.container .divBlockUser .divBlockUser-Inner .divBlockUser-Inner--LinkOut {
+  color: gray;
+  text-decoration: none;
+}
+
+/* PÁGINA HOME - FIM */
