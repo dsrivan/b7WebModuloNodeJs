@@ -504,7 +504,7 @@ footer {
 }
 
 .container .divBlockUser {
-  margin-top: 80px;
+  /* margin-top: 40px; */
   display: flex;
   border-bottom: 1px solid #cecece;
   padding-bottom: 70px;
@@ -541,7 +541,7 @@ footer {
 .container .divBlockUser .divBlockUser-Inner .divBlockUser-Inner--LinkProfile {
   text-decoration: underline;
   font-size: 1.8rem;
-  color: gray;
+  color: #315bbd;
 }
 
 .container .divBlockUser .divBlockUser-Inner .divBlockUser-Inner--LinkOut {
@@ -787,6 +787,16 @@ footer {
   font-weight: bold;
   text-transform: uppercase;
   font-size: 0.8rem;
+}
+
+.container
+  .wrapper
+  .sectionRight
+  .sectionRight-PostsTags
+  .PostsTag
+  .PTag
+  a:hover {
+  background-color: #9d9d9d;
 }
 
 .container .divNoPosts {
