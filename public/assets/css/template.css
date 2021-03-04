@@ -63,6 +63,23 @@ body {
   background-color: #0dcaf0;
   color: #000;
 }
+
+.mt30 {
+  margin-top: 30px;
+}
+
+.m70Auto50 {
+  margin: 70px auto 50px;
+}
+
+.w100 {
+  width: 100% !important;
+}
+
+.dNone {
+  display: none !important;
+}
+
 /* CLASSES GERAIS - FIM */
 
 /* HEADER - INICIO */
@@ -505,6 +522,253 @@ footer {
 .container .divBlockUser .divBlockUser-Inner .divBlockUser-Inner--LinkOut {
   color: gray;
   text-decoration: none;
+}
+
+.container .divBlockUser .divBlockUser-Inner p {
+  text-align: justify;
+  margin-top: 0;
+}
+
+.container .divBlockUser .divBlockUser-Inner .divBlockUser-Inner--BtnAddPost {
+  display: inline-block;
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  padding: 10px 30px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.container .divDefaultTags {
+  display: flex;
+  justify-content: center;
+}
+
+.container .divDefaultTags .divDefaultTag {
+  padding: 5px 10px;
+}
+
+.container .divDefaultTags .divDefaultTag a {
+  border: 1px solid #bfbcbc;
+  padding: 6px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #828282;
+  font-weight: bold;
+}
+
+.container .divDefaultTags .divDefaultTag a:hover,
+.container .divDefaultTags .divDefaultTag a.defaultTagActive {
+  background-color: #47c9e5;
+  border-color: #47c9e5 !important;
+  color: #ffffff !important;
+}
+
+.container .wrapper {
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-areas: "posts posts posts sectionRight";
+  /*grid-template-areas: 'sectionRight' 'posts'*/
+}
+
+.container .wrapper .posts {
+  grid-area: posts;
+  display: flex;
+  /*justify-content: space-around;*/
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.container .wrapper .posts .post {
+  position: relative;
+  width: 50%;
+  border-radius: 4px;
+}
+
+.container .wrapper .posts .post .post-Inner {
+  margin: 10px;
+  border: 1px solid #e6e6e6;
+  background-color: #fff;
+  border-radius: 4px 4px 0 0;
+  /*box-shadow: 0px 0px 20px #ddd;*/
+}
+
+.container .wrapper .posts .post .post-Inner .post-Inner--Image {
+  position: relative;
+  border-radius: 4px 4px 0 0;
+}
+
+.container .wrapper .posts .post .post-Inner .post-Inner--Image img {
+  max-width: 100%;
+  border-radius: 4px 4px 0 0;
+}
+
+.container .wrapper .posts .post .post-Inner .post-Inner--Image div {
+  padding: 10px 30px;
+  color: gray;
+  text-align: center;
+  position: absolute;
+  bottom: 15px;
+  left: -15px;
+}
+
+.container .wrapper .posts .post .post-Inner .post-Inner--Image div span {
+  margin-top: 20px;
+  display: inline-block;
+  background-color: #2ab5b5;
+  color: #ffffff;
+  z-index: 22;
+  top: 0;
+  right: 20px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.container .wrapper .posts .post .post-Inner .post-Inner--Author {
+  padding: 10px 30px;
+  margin: 20px 0 0;
+  color: gray;
+  text-align: center;
+}
+
+.container .wrapper .posts .post .post-Inner .post-Inner--Author span {
+  font-size: 0.9rem;
+}
+
+.container .wrapper .posts .post .post-Inner .post-Inner--Title {
+  padding: 10px 30px;
+  color: gray;
+  text-align: center;
+}
+
+.container .wrapper .posts .post .post-Inner .post-Inner--Title span a {
+  font-size: 1.9rem;
+  color: #2f2f2f;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.container .wrapper .posts .post .post-Inner .post-Inner--Body {
+  padding: 10px 30px;
+  color: gray;
+  text-align: center;
+}
+
+.container .wrapper .posts .post .post-Inner .post-Inner--Body p {
+  text-align: justify;
+}
+
+.container .wrapper .posts .post .post-Inner .post-Inner--PostTags {
+  padding: 30px;
+  color: gray;
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #e6e6e6;
+}
+
+.container .wrapper .posts .post .post-Inner .post-Inner--PostTags p {
+  color: #959595;
+  min-height: 15px;
+}
+
+.container .wrapper .posts .post .post-Inner .post-Inner--BtnEdit {
+  padding: 10px 30px;
+  color: gray;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.container .wrapper .posts .post .post-Inner .post-Inner--BtnEdit a {
+  margin-top: 20px;
+  display: inline-block;
+  background-color: #5b5c5eeb;
+  color: #fff;
+  z-index: 22;
+  top: 0;
+  right: 20px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.container .wrapper .sectionRight {
+  grid-area: sectionRight;
+}
+
+.container .wrapper .sectionRight .sectionRight-DivBuscar label {
+  font-size: 1.65rem;
+  font-weight: bold;
+  display: block;
+}
+
+.container .wrapper .sectionRight .sectionRight-DivBuscar div {
+  margin: 10px 10px 30px 0;
+}
+
+.container
+  .wrapper
+  .sectionRight
+  .sectionRight-DivBuscar
+  form
+  input[type="text"] {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.container
+  .wrapper
+  .sectionRight
+  .sectionRight-DivBuscar
+  form
+  input[type="submit"] {
+  display: inline-block;
+  background-color: #47c9e5;
+  border: 1px solid #47c9e5;
+  border-radius: 4px;
+  color: #fff;
+  padding: 7px 0;
+  width: 100px;
+}
+
+.container .wrapper .sectionRight .sectionRight-PostsTags h2 {
+  font-size: 1.7rem;
+}
+
+.container .wrapper .sectionRight .sectionRight-PostsTags .PostsTag {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 12px;
+  margin: 10px 0 30px 0;
+}
+
+.container .wrapper .sectionRight .sectionRight-PostsTags .PostsTag .PTag {
+  margin: 5px;
+  display: inherit;
+}
+
+.container .wrapper .sectionRight .sectionRight-PostsTags .PostsTag .PTag a {
+  max-width: 200px;
+  text-decoration: none;
+  border: 1px solid #babbbb;
+  background-color: #babbbb;
+  color: #646161;
+  padding: 7px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.container .divNoPosts {
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 /* PÁGINA HOME - FIM */
