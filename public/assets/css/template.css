@@ -875,3 +875,83 @@ footer {
 }
 
 /* PÁGINA EDIT POST - FIM */
+
+/* PÁGINA ADD POST - INICIO */
+.container .divAddPost {
+  min-height: 72.4vh;
+}
+
+.container .divAddPost h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin: 10px 0 20px 0;
+}
+
+.container .divAddPost .divAddPost-Inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.container .divAddPost .divAddPost-Inner .divAddPost-Inner--Photo,
+.container .divAddPost .divAddPost-Inner .divAddPost-Inner--Texts {
+  width: 50%;
+  padding: 10px;
+}
+
+.container .divAddPost .divAddPost-Inner .divAddPost-Inner--Photo img {
+  max-width: 100%;
+}
+
+.container .divAddPost .divAddPost-Inner .divAddPost-Inner--Texts form {
+  max-width: 600px;
+  border: 1px solid #d0cece;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.container .divAddPost .divAddPost-Inner .divAddPost-Inner--Texts textarea {
+  resize: none;
+  border: 1px solid #cdc7c2;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.container .divAddPost .divAddPost-Inner .divAddPost-Inner--Texts .tagsSmall {
+  font-weight: 100;
+  font-style: italic;
+}
+
+.container
+  .divAddPost
+  .divAddPost-Inner
+  .divAddPost-Inner--Texts
+  input[type="file"] {
+  background-color: #fff;
+  border: 1px solid #cdc7c2;
+  border-radius: 5px;
+}
+
+.container
+  .divAddPost
+  .divAddPost-Inner
+  .divAddPost-Inner--Texts
+  input[type="submit"] {
+  background-color: #1abd59;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+/* PÁGINA ADD POST - FIM */
