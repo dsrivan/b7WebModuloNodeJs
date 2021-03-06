@@ -12,9 +12,6 @@
     {{#user}}
         <div class="container m70Auto50">
             <div class="divBlockUser">
-                <div class="divBlockUser-Image">
-                    <img src="/assets/images/imgTitleBlog.jpg">
-                </div>
                 <div class="divBlockUser-Inner">
                     <div>
                         <h2>
@@ -30,10 +27,14 @@
                         <a class="divBlockUser-Inner--BtnAddPost" href="/post/add">Add post</a>
                     </div>
                 </div>
+                <div class="divBlockUser-Image">
+                    {{! <img src="/assets/images/imgTitleBlog.jpg"> }}
+                    <img src="/assets/illustrations/Publish_article.svg">
+                </div>
             </div>
         </div>
     {{/user}}
-    <div class="container m70Auto50">
+    <div class="container m70Auto50 dNone">
         <div class="divDefaultTags">
             <div class="divDefaultTag"><a href="/" class="defaultTagActive">Todos</a></div>
             <div class="divDefaultTag"><a href="#">Tag</a></div>
@@ -46,7 +47,7 @@
         </div>
     </div>
     <div class="container">
-        <div class="wrapper">
+        <div class="wrapper mY60">
             <section class="posts">
                 {{#posts}}
                     <article class="post">

@@ -94,6 +94,11 @@ img {
   margin: 70px auto 50px;
 }
 
+.mY60 {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
 .w100 {
   width: 100% !important;
 }
@@ -504,27 +509,29 @@ footer {
 }
 
 .container .divBlockUser {
-  /* margin-top: 40px; */
   display: flex;
-  border-bottom: 1px solid #cecece;
-  padding-bottom: 70px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #137799;
 }
 
 .container .divBlockUser .divBlockUser-Image {
-  width: 55%;
-  border: 1px solid #ccc;
+  width: 30%;
+  /* border: 1px solid #ccc; */
   border-radius: 4px;
-  background-color: #ccc;
+  /* background-color: #ccc; */
   color: #666;
   font-weight: bold;
 }
 
 .container .divBlockUser .divBlockUser-Image img {
   border-radius: 4px;
+  width: 350px;
+  height: auto;
 }
 
 .container .divBlockUser .divBlockUser-Inner {
-  width: 45%;
+  width: 70%;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -541,11 +548,11 @@ footer {
 .container .divBlockUser .divBlockUser-Inner .divBlockUser-Inner--LinkProfile {
   text-decoration: underline;
   font-size: 1.8rem;
-  color: #315bbd;
+  color: #ffffff;
 }
 
 .container .divBlockUser .divBlockUser-Inner .divBlockUser-Inner--LinkOut {
-  color: gray;
+  color: #ffffff;
   text-decoration: none;
 }
 
