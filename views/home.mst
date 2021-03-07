@@ -34,16 +34,28 @@
             </div>
         </div>
     {{/user}}
-    <div class="container m70Auto50 dNone">
-        <div class="divDefaultTags">
-            <div class="divDefaultTag"><a href="/" class="defaultTagActive">Todos</a></div>
-            <div class="divDefaultTag"><a href="#">Tag</a></div>
-            <div class="divDefaultTag"><a href="#">Post</a></div>
-            <div class="divDefaultTag"><a href="#">Corpo</a></div>
-            <div class="divDefaultTag"><a href="#">Teste</a></div>
-            <div class="divDefaultTag"><a href="#">Outro</a></div>
-            <div class="divDefaultTag"><a href="#">Blob</a></div>
-            <div class="divDefaultTag"><a href="#">Título</a></div>
+    <div class="container" style="margin: 70 auto 0;">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px;">Tags</h2>
+        <div class="divDefaultTags" style="flex-wrap: wrap;">
+            <div class="divDefaultTag">
+            {{#tagAll}}
+                <a class="defaultTagActive" style="display: inline-flex;" href="/">
+                    Todos
+                </a>
+            {{/tagAll}}
+            {{^tagAll}}
+                <a style="display: inline-flex;" href="/">
+                    Todos
+                </a>
+            {{/tagAll}}
+            </div>
+            {{#tags}}
+                <div class="divDefaultTag">
+                    <a class="{{class}}" style="display: inline-flex;" href="/?t={{_id}}">
+                        {{_id}} <span class="dNone">({{count}})</span>
+                    </a>
+                </div>
+            {{/tags}}
         </div>
     </div>
     <div class="container">
@@ -90,7 +102,7 @@
                     </article>
                 {{/posts}}
             </section>
-            <aside class="sectionRight">
+            <aside class="sectionRight dNone">
                 <div class="sectionRight-DivBuscar w100">                
                     <label>Buscar</label>
                     <div class="w100">

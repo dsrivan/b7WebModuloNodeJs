@@ -44,10 +44,14 @@ exports.index = async (request, response) => {
     const [tags, posts] = await Promise.all([tagsPromise, postsPromise]);
     // acima, utilizando o conceito de descontrução
 
+    // se nenhuma tag estiver sido selecionada, esta será por default
+    let tagAll = true;
+
     // looping para ver qual tag foi clicada e aplicar um css
     for (let i in tags) {
         if (tags[i]._id == responseJson.tag) {
-            tags[i].class = "selected";
+            tags[i].class = "defaultTagActive";
+            tagAll = false;
         }
     }
 
@@ -57,6 +61,9 @@ exports.index = async (request, response) => {
 
     // adiciona à request, os posts encontrados
     responseJson.posts = posts;
+
+    // adiciona à request, se teve alguma tag selecionada
+    responseJson.tagAll = tagAll;
 
     response.render('home', responseJson);
 };

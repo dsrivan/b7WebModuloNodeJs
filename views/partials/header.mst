@@ -9,9 +9,16 @@
         <title>Site - {{h.defaultPageTitle}}</title>
     {{/pageTitle}}
     
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,600,700,300i,400i,600i,700i,|Montserrat:200,300,300i,400,400i,600,600i,700,700i,&amp;subset=latin" media="all">
+    {{! Font Roboto }}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    
+    {{! Material-Icons }}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    
+    {{! Main CSS  }}
     <link rel="stylesheet" type="text/css" href="/assets/css/template.css">
 
+    {{! Main JS }}
     <script type="text/javascript" src="/assets/js/mainFunctions.js"></script>
 </head>
 
@@ -22,7 +29,7 @@
                 <div class="navTitle">
                     Blog
                 </div>
-                <div class="navNav">
+                <div class="navNav" style="display: flex; align-items: center;">
                     <nav>
                         <ul>
                             {{#h.menu}}
@@ -36,7 +43,10 @@
                 <div class="divUser">
                     {{^user}}
                         <div>
-                            <a href="/users/login">Login</a>
+                            <a href="/users/login" style="display: flex; align-items: center;">
+                                Login
+                                <span style="margin-left: 5px;" class="material-icons">login</span>
+                            </a>
                         </div>
                     {{/user}}
                 </div>
