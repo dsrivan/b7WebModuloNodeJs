@@ -15,7 +15,7 @@
                 <div class="divBlockUser-Inner">
                     <div>
                         <h2>
-                            Olá, <a class="divBlockUser-Inner--LinkProfile" href="/profile">{{user.name}}</a>. <small><a class="divBlockUser-Inner--LinkOut" href="/users/logout">Sair</a></small>
+                            Olá, {{user.name}}. <a class="divBlockUser-Inner--LinkProfile" href="/profile"><span style="margin-left: 5px; color: #3e3b3b;" class="material-icons">settings</span></a><a class="divBlockUser-Inner--LinkOut" href="/users/logout"><span style="margin-left: 5px; color: #b32727;" class="material-icons">logout</span></a></small>
                         </h2>
                     </div>
                     <div>
