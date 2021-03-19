@@ -513,16 +513,16 @@ footer {
   padding: 20px;
   border-radius: 8px;
   color: #ffffff;
-  background: #e96443; /* fallback for old browsers */
+  background: #1d386c; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
-    #904e95,
-    #e96443
+    #439be9,
+    #1d386c
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
-    #904e95,
-    #e96443
+    #439be9,
+    #1d386c
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
@@ -599,7 +599,7 @@ footer {
   font-size: 0.9rem;
   text-decoration: none;
   color: #828282;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .container .divDefaultTags .divDefaultTag a:hover,
@@ -630,6 +630,11 @@ footer {
   position: relative;
   width: 33.3333%;
   border-radius: 4px;
+  transition: all .1s linear;
+}
+
+.container .wrapper .posts .post:hover {
+  /* transform: translateY(-5px); */
 }
 
 .container .wrapper .posts .post .post-Inner {
@@ -643,9 +648,16 @@ footer {
 .container .wrapper .posts .post .post-Inner .post-Inner--Image {
   position: relative;
   border-radius: 4px 4px 0 0;
+  transition: all .2s linear;
+  overflow: hidden;
+}
+
+.container .wrapper .posts .post .post-Inner .post-Inner--Image:hover img {
+  transform: scale(1.1);
 }
 
 .container .wrapper .posts .post .post-Inner .post-Inner--Image img {
+  transition: all .2s linear;
   border-radius: 4px 4px 0 0;
 }
 
