@@ -1,7 +1,8 @@
-<div onclick="toTop();" class="divToTop right100off">
-    <span>&uarr;</span>
-    <span>topo</span>
-</div>
+        <div onclick="toTop();" class="divToTop right100off">
+            <span>&uarr;</span>
+            <span>topo</span>
+        </div>
+    </main>
     <footer>
         <div>
             <h2>Rodapé</h2>

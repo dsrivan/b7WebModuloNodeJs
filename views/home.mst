@@ -1,61 +1,49 @@
 {{> header}}
 
 <section>
-    <div class="container-full">
-        <div class="container">
-            <div class="bannerTitle">
-                <h1>Título</h1>
-                <h3>Lorem ipsum dolor sit amet.</h3>
-            </div>
-        </div>    
-    </div>
-    {{#user}}
-        <div class="container m70Auto50">
-            <div class="divBlockUser">
-                <div class="divBlockUser-Inner">
-                    <div>
-                        <h2>
-                            Olá, {{user.name}}. <a class="divBlockUser-Inner--LinkProfile" href="/profile"><span style="margin-left: 5px; color: #3e3b3b;" class="material-icons">settings</span></a><a class="divBlockUser-Inner--LinkOut" href="/users/logout"><span style="margin-left: 5px; color: #b32727;" class="material-icons">logout</span></a></small>
-                        </h2>
-                    </div>
-                    <div>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in nibh mollis, suscipit neque sit amet, semper velit. Curabitur vitae venenatis lorem, at laoreet neque.
-                        </p>
-                    </div>
-                    <div class="mt30">
-                        <a class="divBlockUser-Inner--BtnAddPost" href="/post/add">Add post</a>
-                    </div>
-                </div>
-                <div class="divBlockUser-Image">
-                    {{! <img src="/assets/images/imgTitleBlog.jpg"> }}
-                    <img src="/assets/illustrations/Publish_article.svg">
-                </div>
-            </div>
-        </div>
-    {{/user}}
     <div class="container" style="margin: 70 auto 0;">
-        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px;">Tags</h2>
+        <h2 style="text-align: center; font-size: 2rem; margin: 30px 20px;">CATEGORIAS</h2>
         <div class="divDefaultTags" style="flex-wrap: wrap;">
             <div class="divDefaultTag">
-            {{#tagAll}}
                 <a class="defaultTagActive" style="display: inline-flex;" href="/">
                     Todos
                 </a>
-            {{/tagAll}}
-            {{^tagAll}}
-                <a style="display: inline-flex;" href="/">
-                    Todos
-                </a>
-            {{/tagAll}}
             </div>
-            {{#tags}}
-                <div class="divDefaultTag">
-                    <a class="{{class}}" style="display: inline-flex;" href="/?t={{_id}}">
-                        {{_id}} <span class="dNone">({{count}})</span>
-                    </a>
-                </div>
-            {{/tags}}
+            <div class="divDefaultTag">
+                <a class="" style="display: inline-flex;" href="/">
+                    Categoria
+                </a>
+            </div>
+            <div class="divDefaultTag">
+                <a class="" style="display: inline-flex;" href="/">
+                    Categoria
+                </a>
+            </div>
+            <div class="divDefaultTag">
+                <a class="" style="display: inline-flex;" href="/">
+                    Categoria
+                </a>
+            </div>
+            <div class="divDefaultTag">
+                <a class="" style="display: inline-flex;" href="/">
+                    Categoria
+                </a>
+            </div>
+            <div class="divDefaultTag">
+                <a class="" style="display: inline-flex;" href="/">
+                    Categoria
+                </a>
+            </div>
+            <div class="divDefaultTag">
+                <a class="" style="display: inline-flex;" href="/">
+                    Categoria
+                </a>
+            </div>
+            <div class="divDefaultTag">
+                <a class="" style="display: inline-flex;" href="/">
+                    Categoria
+                </a>
+            </div>
         </div>
     </div>
     <div class="container">
@@ -74,7 +62,7 @@
                                     <img src="/media/defaultImage___.jpg" alt="imagem"/>
                                 {{/photo}}
                                 <div class="post-Inner--Image-PhotoTag">
-                                    <span>palavra</span>
+                                    <span>categoria</span>
                                 </div>
                             </div>
                             <div class="post-Inner--Author">
@@ -95,14 +83,16 @@
                             </div>
                             <div class="post-Inner--BtnEdit">
                                 {{#user}}
-                                    <a href="/post/{{slug}}/edit">[ editar ]</a>
+                                    <a href="/post/{{slug}}/edit">
+                                        <span class="material-icons iconUser">edit</span>
+                                    </a>
                                 {{/user}}
                             </div>
                         </div>
                     </article>
                 {{/posts}}
             </section>
-            <aside class="sectionRight dNone">
+            <aside class="sectionRight">
                 <div class="sectionRight-DivBuscar w100">                
                     <label>Buscar</label>
                     <div class="w100">
@@ -113,7 +103,7 @@
                     </div>
                 </div>
                 <div class="sectionRight-PostsTags"> 
-                    <h2>Tags populares</h2>
+                    <h2 style="margin: 5px;">Tags populares</h2>
                     <div class="PostsTag">
                         {{#tags}}
                             <div class="PTag {{class}}">

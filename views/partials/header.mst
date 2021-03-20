@@ -1,6 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     {{#pageTitle}}
         <title>Site - {{pageTitle}}</title>
     {{/pageTitle}}
@@ -41,16 +46,53 @@
                     </nav>
                 </div>
                 <div class="divUser">
-                    {{^user}}
-                        <div>
-                            <a href="/users/login" style="display: flex; align-items: center;">
-                                Login
-                                <span style="margin-left: 5px;" class="material-icons">login</span>
-                            </a>
+                    <span class="material-icons iconUser">account_circle</span>
+                    <div class="divUser-Options">
+                        <div class="divUser-Options--Inner">
+                            <ul>
+                                {{#user}}
+                                    <li>
+                                        <a href="/users/logout">
+                                            <span class="material-icons iconUser">logout</span>
+                                            Sair
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/profile" style="display: flex; align-items: center;">
+                                            <span class="material-icons iconUser">settings</span>
+                                            Alterar perfil
+                                        </a>
+                                    </li>
+                                {{/user}}
+                                {{^user}}
+                                    <li>
+                                        <a href="/users/login" style="display: flex; align-items: center;">
+                                            <span class="material-icons iconUser">login</span>
+                                            Login
+                                        </a>
+                                    </li>
+                                {{/user}}
+                            </ul>
                         </div>
-                    {{/user}}
+                    </div>
                 </div>
+                {{#user}}
+                    <div>
+                        <a class="btnAddPost" href="/post/add">Add post</a>
+                    </div>
+                {{/user}}
             </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container-full" style="display: flex;">
+            <div class="container">
+                <div class="bannerTitle">
+                    <h1>Título</h1>
+                    <h3>Lorem ipsum dolor sit amet.</h3>
+                </div>
+            </div>    
         </div>
 
         {{#flashes}}
@@ -66,4 +108,3 @@
                 <div class="divWarning info">{{.}}</div>
             {{/info}}
         {{/flashes}}
-    </header>

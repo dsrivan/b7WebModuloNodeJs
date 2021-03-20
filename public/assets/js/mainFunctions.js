@@ -2,16 +2,11 @@
 const fnToggleBGNavigation = () => {
     window.addEventListener('scroll', () => {
         let scrollY = window.scrollY;
-        let header = document.getElementsByTagName('header')[0];
         let toTop = document.getElementsByClassName('divToTop')[0];
 
         if (scrollY > 50) {
-            if (!header.classList.contains('toggleBGNavigation'));
-            classListAdd(header, 'toggleBGNavigation');
             classListRemove(toTop, 'right100off');
         } else {
-            if (header.classList.contains('toggleBGNavigation'));
-            classListRemove(header, 'toggleBGNavigation');
             classListAdd(toTop, 'right100off');
         }
     });

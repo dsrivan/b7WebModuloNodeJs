@@ -21,8 +21,4 @@
     </form>
 </section>
 
-<script type="text/javascript">
-    classListAdd(document.getElementsByTagName('header')[0], 'toggleBGNavigation');
-</script>
-
 {{> footer}}
