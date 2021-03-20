@@ -45,6 +45,11 @@
                         </ul>
                     </nav>
                 </div>
+                {{#user}}
+                    <div>
+                        <a class="btnAddPost" href="/post/add">Add post</a>
+                    </div>
+                {{/user}}
                 <div class="divUser">
                     <span class="material-icons iconUser">account_circle</span>
                     <div class="divUser-Options">
@@ -76,11 +81,6 @@
                         </div>
                     </div>
                 </div>
-                {{#user}}
-                    <div>
-                        <a class="btnAddPost" href="/post/add">Add post</a>
-                    </div>
-                {{/user}}
             </div>
         </div>
     </header>

@@ -8,7 +8,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto";
-  font-size: 15px;
+  font-size: 14px;
 }
 body {
   font-family: "Roboto", "Montserrat", "Helvetica", "Arial", sans-serif;
@@ -44,7 +44,11 @@ img {
 }
 
 .toggleBGNavigation {
-  padding: 10px 0 !important;
+  padding: 5px 0 !important;
+  background-color: #114b88;
+  box-shadow: 0px 0px 5px;
+  border-bottom: 1px solid #114b88;
+  z-index: 2;
 }
 
 .divWarning {
@@ -119,13 +123,9 @@ header {
   font-weight: bold;
   top: 0;
   width: 100%;
-  /* position: absolute;
-  padding: 20px 0; */
-  background-color: transparent;
-}
-
-header .container {
   position: fixed;
+  background-color: transparent;
+  padding: 15px 0 !important
 }
 
 header .container .nav {
@@ -157,6 +157,7 @@ header .container .nav .navNav nav ul {
 
 header .container .nav .navNav nav ul li {
   display: inline-block;
+  text-transform: uppercase;
   cursor: pointer;
 }
 
@@ -687,8 +688,9 @@ footer {
   transition: all 0.1s linear;
 }
 
-.container .wrapper .posts .post:hover {
-  /* transform: translateY(-5px); */
+.container .wrapper .posts .post a {
+  text-decoration: none;
+  outline: none;
 }
 
 .container .wrapper .posts .post .post-Inner {
@@ -696,7 +698,34 @@ footer {
   border: 1px solid #e6e6e6;
   background-color: #fff;
   border-radius: 4px 4px 0 0;
-  /*box-shadow: 0px 0px 20px #ddd;*/
+  position: relative;
+}
+
+.container .wrapper .posts .post .post-Inner .postBorder {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  transition: all .2s linear;
+}
+
+.container .wrapper .posts .post .post-Inner .postBorder .postBorder-Inner {
+  width: 100%;
+  /* height: 100%; */
+  height: 50%;
+  border: 3px solid orange;
+  transition: all .2s linear;
+  opacity: 0;
+}
+
+.container .wrapper .posts .post:hover .post-Inner .postBorder {
+  padding: 10px;
+}
+
+.container .wrapper .posts .post:hover .post-Inner .postBorder .postBorder-Inner {
+  opacity: 1;
 }
 
 .container .wrapper .posts .post .post-Inner .post-Inner--Image {
@@ -704,6 +733,7 @@ footer {
   border-radius: 4px 4px 0 0;
   transition: all 0.2s linear;
   overflow: hidden;
+  position: relative;
 }
 
 .container .wrapper .posts .post:hover .post-Inner .post-Inner--Image img {
@@ -754,7 +784,7 @@ footer {
   text-align: center;
 }
 
-.container .wrapper .posts .post .post-Inner .post-Inner--Title span a {
+.container .wrapper .posts .post .post-Inner .post-Inner--Title span {
   font-size: 1.9rem;
   color: #2f2f2f;
   text-decoration: none;
@@ -1140,6 +1170,7 @@ footer {
     "sectionRight"
     "posts";
   }
+
   .container .wrapper .posts .post {
     width: 100%;
   }

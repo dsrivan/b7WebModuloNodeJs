@@ -51,44 +51,47 @@
             <section class="posts">
                 {{#posts}}
                     <article class="post">
-                        <div class="post-Inner">
-                            <div class="post-Inner--Image">
-                                {{! se tiver foto salva, a exibe }}
-                                {{#photo}}
-                                    <img src="/media/{{photo}}" alt="imagem"/>
-                                {{/photo}}
-                                {{! senão, exibe uma foto padrão }}
-                                {{^photo}}
-                                    <img src="/media/defaultImage___.jpg" alt="imagem"/>
-                                {{/photo}}
-                                <div class="post-Inner--Image-PhotoTag">
-                                    <span>categoria</span>
+                        <a href="/post/{{slug}}">
+                            <div class="post-Inner">
+                                <div class="postBorder">
+                                    <div class="postBorder-Inner"></div>
                                 </div>
-                            </div>
-                            <div class="post-Inner--Author">
-                                <span>por {{author.name}}</span>
-                            </div>
-                            <div class="post-Inner--Title">
-                                <span>
-                                    <a href="/post/{{slug}}">
+                                <div class="post-Inner--Image">
+                                    {{! se tiver foto salva, a exibe }}
+                                    {{#photo}}
+                                        <img src="/media/{{photo}}" alt="imagem"/>
+                                    {{/photo}}
+                                    {{! senão, exibe uma foto padrão }}
+                                    {{^photo}}
+                                        <img src="/media/defaultImage___.jpg" alt="imagem"/>
+                                    {{/photo}}
+                                    <div class="post-Inner--Image-PhotoTag">
+                                        <span>categoria</span>
+                                    </div>
+                                </div>
+                                <div class="post-Inner--Author">
+                                    <span>por {{author.name}}</span>
+                                </div>
+                                <div class="post-Inner--Title">
+                                    <span>
                                         {{title}}
-                                    </a>
-                                </span>
-                            </div>
-                            <div class="post-Inner--Body">
-                                <p>{{body}}</p>
-                            </div>
-                            <div class="post-Inner--PostTags">
-                                <p><small>{{tags}}</small></p>
-                            </div>
-                            <div class="post-Inner--BtnEdit">
+                                    </span>
+                                </div>
+                                <div class="post-Inner--Body">
+                                    <p>{{body}}</p>
+                                </div>
+                                <div class="post-Inner--PostTags">
+                                    <p><small>{{tags}}</small></p>
+                                </div>
                                 {{#user}}
-                                    <a href="/post/{{slug}}/edit">
-                                        <span class="material-icons iconUser">edit</span>
-                                    </a>
+                                    <div class="post-Inner--BtnEdit">
+                                        <a href="/post/{{slug}}/edit">
+                                            <span class="material-icons iconUser">edit</span>
+                                        </a>
+                                    </div>
                                 {{/user}}
                             </div>
-                        </div>
+                        </a>
                     </article>
                 {{/posts}}
             </section>
