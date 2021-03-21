@@ -53,9 +53,6 @@
                     <article class="post">
                         <a href="/post/{{slug}}">
                             <div class="post-Inner">
-                                <div class="postBorder">
-                                    <div class="postBorder-Inner"></div>
-                                </div>
                                 <div class="post-Inner--Image">
                                     {{! se tiver foto salva, a exibe }}
                                     {{#photo}}
