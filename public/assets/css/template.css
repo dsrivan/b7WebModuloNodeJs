@@ -45,7 +45,7 @@ img {
 
 .toggleBGNavigation {
   padding: 5px 0 !important;
-  background-color: #114b88;
+  background-color: #000102c2;
   box-shadow: 0px 0px 5px;
   border-bottom: 1px solid #114b88;
   z-index: 2;
@@ -235,8 +235,8 @@ header .container .nav .divUser-Options--Inner ul li a span {
 
 .btnAddPost {
   display: inline-block;
-  color: #fff;
-  background-color: #343a40;
+  color: #343040;
+  background-color: #c4af3c;
   border-color: #343a40;
   padding: 10px 30px;
   text-decoration: none;
