@@ -4,8 +4,7 @@
 
 ## Demonstration
 
-> _Blog project_
-> ![Demo: 'Blog project'](public/assets/images/demo/demo.png)
+> _Blog project_ > ![Demo: 'Blog project'](public/assets/images/demo/imgDemo.png)
 
 ### Description
 
